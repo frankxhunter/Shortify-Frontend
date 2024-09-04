@@ -1,0 +1,19 @@
+.title{
+    margin:auto;
+    margin-top: 40px;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: var(--backgroun-color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    box-sizing: border-box;
+    padding: 15px 25px;
+    font-size: 30px;
+    box-shadow: 1px 20px 20px 5px black;
+}
+h1{
+    margin: 0;
+
+}

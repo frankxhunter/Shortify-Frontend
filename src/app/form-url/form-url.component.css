@@ -1,0 +1,44 @@
+.form-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 500px;
+    font-size: 20px;
+    
+    
+}
+.form *{
+    box-shadow: 1px 5px 5px 2px black;
+    outline: none;
+    font-size: 23px;
+    margin: 0;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    
+}
+
+.btnSend{
+    width: 20%;
+    background: var(--element-color);
+    color: var(--backgroun-color);
+    border: 1px solid var(--element-color);
+}
+
+.btnSend:hover{
+    filter: brightness(0.7);
+}
+.btnSend:active{
+    filter: brightness(1);
+}
+
+.inputUrl{
+    width: 76%;
+    color: black;
+} 
