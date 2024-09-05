@@ -1,12 +1,13 @@
 .container_url_shortened{
     background-color: var(--backgroun-color-secondary);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    
+    grid-template-rows: 1fr 1fr ;
     border: 2px dashed;
     border-radius: 10px;
     margin: auto ;
     margin-top: 40px;
-    width: 500px;
+    max-width: 500px;
     padding: 15px;
     font-size: 20px;
     gap: 10px;
@@ -27,26 +28,30 @@
 }
 
 .container_text{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 10px;
 }
 .container_label{
     font-size: 30px;
 }
 .url{
     background-color: white;
-    width: 77%;
     color: black;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
     align-items: center;
+    width: 100%;
+    overflow: hidden;
     gap: 4px;
+    position: relative;
 
 }
 .url span{
     color: black;
 }
 .btn_copy{
-    width: 20%;
+    min-width: 85px;
     background: var(--element-color);
     color: var(--backgroun-color);
     border: 1px solid var(--element-color);
@@ -54,6 +59,7 @@
     align-items: center;
     gap: 2px;
     font-size: 20px;
+    text-align: center;
 
 
 }
@@ -66,7 +72,7 @@
 }
 
 .url, .btn_copy{
-    padding: 4px;
+    padding: 4px 12px;
     border-radius: 10px;
 }
 .text_copied{
