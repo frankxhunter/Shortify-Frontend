@@ -3,7 +3,7 @@
     <h1>{{title}}</h1>
   </div>
   <app-form-url (fetchEvent)="fetchDataRefresh($event)"></app-form-url>
-  @if (fetchData) {
-    <app-output-url></app-output-url>
+  @if (fetchData != "") {
+    <app-output-url [shortUrl]="fetchData"></app-output-url>
   }
 </main>

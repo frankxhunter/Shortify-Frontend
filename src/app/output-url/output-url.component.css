@@ -10,7 +10,8 @@
     padding: 15px;
     font-size: 20px;
     gap: 10px;
-    animation: appear 1s linear;    
+    animation: appear 1s linear; 
+    position: relative;   
 }
 
 @keyframes appear {
@@ -67,4 +68,34 @@
 .url, .btn_copy{
     padding: 4px;
     border-radius: 10px;
+}
+.text_copied{
+    position: absolute;
+    background-color: gray;
+    top: 7px;
+    right: 21px;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+    animation: appearAndDisappear 2s linear;
+
+}
+
+@keyframes appearAndDisappear {
+    0%{
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    20%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    80%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(10px);
+        opacity: 0;
+    }
 }

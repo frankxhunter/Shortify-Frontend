@@ -8,11 +8,14 @@
             </span>
             {{shortUrl}}
         </div>
-        <button class="btn_copy">
+        <button class="btn_copy" (click)="copyText()">
             <span class="material-symbols-outlined">
                 content_copy
             </span>
             Copy
         </button>
+        @if (copySuccess) {
+            <span class="text_copied">Copied!</span>
+        }
     </div>
 </div>

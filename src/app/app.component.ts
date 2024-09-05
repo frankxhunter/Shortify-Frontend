@@ -12,10 +12,14 @@ import { OutputUrlComponent } from "./output-url/output-url.component";
 })
 export class AppComponent {
   title = 'Shortify';
-  fetchData = false;
+  fetchData = "";
 
-  fetchDataRefresh(data: boolean){
-    this.fetchData = data;
+  fetchDataRefresh(data: string){
+    this.fetchData = ""
+    setTimeout(()=>{
+      this.fetchData = data;
+
+    },10)
 
   }
 }
