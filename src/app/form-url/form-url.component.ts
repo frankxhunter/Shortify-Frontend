@@ -1,14 +1,13 @@
+import { NgClass, NgStyle } from '@angular/common';
 import { Component, EventEmitter, inject, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { FetchApiService } from '../services/fetch-api.service';
-import { HttpClientModule } from '@angular/common/http';
-import { error } from 'console';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { API_URLS } from '../api-urls';
+import { FetchApiService } from '../services/fetch-api.service';
 
 @Component({
   selector: 'app-form-url',
   standalone: true,
-  imports: [FormsModule, HttpClientModule],
+  imports: [FormsModule, ReactiveFormsModule, NgClass, NgStyle],
   templateUrl: './form-url.component.html',
   styleUrl: './form-url.component.css'
 })
@@ -18,11 +17,34 @@ export class FormUrlComponent {
 
   dataSend= "";
 
+  urlForm: FormGroup;
+
   loader = false;
 
   urlValue = "https://chatgpt.com/c/c5371a23-6599-4c8a-b82d-649319c2c931"
 
   @Output() fetchEvent = new EventEmitter<string>();
+
+  constructor(private _form: FormBuilder){
+    this.urlForm = this._form.group({
+      url: ["", [Validators.required, Validators.pattern(/^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/)]]
+    })
+  }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.urlForm.patchValue(
+      {
+        url: this.urlValue
+      }
+    )
+  }
+
+  hasErrors(controlName: string, errorType: string){
+    return this.urlForm.get(controlName)?.hasError(errorType) 
+    && this.urlForm.get(controlName)?.touched 
+  }
 
 fetchData(){
 
@@ -30,7 +52,8 @@ fetchData(){
     
     const shortURLFull = API_URLS.baseURL +"/"+ data.shortUrl
 
-    this.fetchEvent.emit(shortURLFull)
+    console.log(shortURLFull);
+    //this.fetchEvent.emit(shortURLFull)
 
   })
 

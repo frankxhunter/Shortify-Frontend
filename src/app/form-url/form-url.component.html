@@ -1,13 +1,15 @@
 <section class="form-section" >
-    <form class="form" (ngSubmit)="fetchData()" #myForm="ngForm" id="urlForm">
+    <form id="form" class="form"  (ngSubmit)="fetchData()" [formGroup]="urlForm" id="urlForm">  
         <input 
         type="text" 
         class="inputUrl"
         id="inputUrl" 
         placeholder="Enter the URL you want shorten" 
         [(ngModel)]="urlValue" required 
-        [ngModelOptions]="{standalone: true}"
-        autocomplete="off">
+        autocomplete="off"
+        formControlName="url"
+        [ngClass]="{'is_invalid': hasErrors('url', 'required') || hasErrors('url', 'pattern')}"
+        >
         <button type="submit" class="btnSend">Shorter</button>
     </form>
 </section>

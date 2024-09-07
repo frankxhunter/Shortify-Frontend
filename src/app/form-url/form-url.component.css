@@ -43,3 +43,7 @@
 .inputUrl{
     color: black;
 } 
+.is_invalid{
+    color: red;
+    border-color: red;
+}
