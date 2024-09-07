@@ -45,5 +45,33 @@
 } 
 .is_invalid{
     color: red;
-    border-color: red;
+    border-color: red ;
+}
+
+.error{
+    color: rgb(255, 0, 0);
+    width: 100%;
+    grid-column: span 2;
+    border: 2px solid var(--element-color) !important;
+    display: none;
+    opacity: 0;
+
+}
+
+.error_show{
+    display: flex;
+    align-items: center;
+    opacity: 1;
+
+}
+
+.material-symbols-outlined {
+    border: none !important;
+    background-color: none !important;
+    box-shadow: none !important;
+  font-variation-settings :
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
