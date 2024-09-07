@@ -1,0 +1,20 @@
+.error_container{
+    background-color: var(--backgroun-color-secondary);
+    display: grid;
+    
+    grid-template-rows: 1fr 1fr ;
+    border: 2px dashed;
+    border-radius: 10px;
+    margin: auto ;
+    margin-top: 40px;
+    max-width: 500px;
+    padding: 15px;
+    font-size: 20px;
+    gap: 10px;
+    animation: appear 1s linear; 
+    position: relative;   
+}
+
+.title_error, .description_error{
+    color: white;
+}

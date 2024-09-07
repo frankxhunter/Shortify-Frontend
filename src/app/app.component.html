@@ -2,8 +2,11 @@
   <div class="title">
     <h1>{{title}}</h1>
   </div>
-  <app-form-url (fetchEvent)="fetchDataRefresh($event)"></app-form-url>
+  <app-form-url (fetchEvent)="fetchDataRefresh($event)" (errorEvent)="errorFetch($event)"></app-form-url>
   @if (fetchData != "") {
     <app-output-url [shortUrl]="fetchData"></app-output-url>
+  }
+  @else if (errorConnection) {
+    <app-error></app-error>
   }
 </main>

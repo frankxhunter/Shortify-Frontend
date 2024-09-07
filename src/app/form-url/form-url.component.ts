@@ -15,15 +15,17 @@ export class FormUrlComponent {
 
   fetchApiService = inject(FetchApiService)
 
+  
   dataSend= "";
-
+  
   urlForm: FormGroup;
-
+  
   loader = false;
-
+  
   urlValue = "https://chatgpt.com/c/c5371a23-6599-4c8a-b82d-649319c2c931"
-
+  
   @Output() fetchEvent = new EventEmitter<string>();
+  @Output() errorEvent = new EventEmitter<boolean>();
 
   constructor(private _form: FormBuilder){
     this.urlForm = this._form.group({
@@ -52,9 +54,12 @@ fetchData(){
     
     const shortURLFull = API_URLS.baseURL +"/"+ data.shortUrl
 
-    console.log(shortURLFull);
-    //this.fetchEvent.emit(shortURLFull)
+    //console.log(shortURLFull);
+    this.fetchEvent.emit(shortURLFull)
 
+  }, (error)=>{
+    console.log(error);
+    this.errorEvent.emit(true);
   })
 
 }
