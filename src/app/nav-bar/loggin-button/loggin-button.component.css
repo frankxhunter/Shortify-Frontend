@@ -24,7 +24,7 @@
     color: white;
 }
 .button{
-    background-color: var(--backgroun-color-secondary);
+    background-color: var(--background-color-secondary);
     width: 90px;
     border: none;
     font-size: 20px;
@@ -39,5 +39,5 @@
 }
 .logginButton{
     background-color: var(--element-color);
-    color: var(--backgroun-color);
+    color: var(--background-color);
 }

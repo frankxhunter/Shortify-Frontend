@@ -1,5 +1,5 @@
 .error_container{
-    background-color: var(--backgroun-color-secondary);
+    background-color: var(--background-color-secondary);
     display: grid;
     
     grid-template-rows: 1fr 1fr ;

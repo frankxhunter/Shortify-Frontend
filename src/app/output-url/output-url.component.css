@@ -1,5 +1,5 @@
 .container_url_shortened{
-    background-color: var(--backgroun-color-secondary);
+    background-color: var(--background-color-secondary);
     display: grid;
     
     grid-template-rows: 1fr 1fr ;
@@ -53,7 +53,7 @@
 .btn_copy{
     min-width: 85px;
     background: var(--element-color);
-    color: var(--backgroun-color);
+    color: var(--background-color);
     border: 1px solid var(--element-color);
     display: flex;
     align-items: center;
@@ -64,7 +64,7 @@
 
 }
 .btn_copy span{
-    color: var(--backgroun-color) !important;
+    color: var(--background-color) !important;
 
 }
 .btn_copy:hover{

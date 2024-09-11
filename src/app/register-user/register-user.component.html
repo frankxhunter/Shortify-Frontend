@@ -1,0 +1,49 @@
+<div class="background_container">
+    <div class="container">
+        <h2 class="title">Welcome to <span>Shortify</span></h2>
+        <form action="" class="form">
+            <div class="input_container">
+                <label for="username">Username<sup>*</sup>: </label>
+                <input class="input" type="text" id="username" placeholder="Enter your username" name="username">
+            </div>
+            <div class="input_container">
+                <label for="email">Email<sup>*</sup>: </label>
+                <input  class="input"type="text" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="input_container">
+                <label for="password">Password<sup>*</sup>: </label>
+                <div class="input password_input">
+                    <input class="password" 
+                    [type]="passwordVisibility? 'text': 'password'"
+                    id="password" 
+                    name="password" 
+                    placeholder="Enter your password">
+                    <div class="visibility" (click)="changePasswordVisibility()">
+                        @if (!passwordVisibility) {
+                            <span class="material-symbols-outlined">
+                                visibility_off
+                            </span>
+                        }
+                        @else {
+                            <span class="material-symbols-outlined">
+                                visibility
+                                </span>
+                        }
+
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="submit_btn">
+                <span class="material-symbols-outlined">
+                    login
+                </span>
+                Sign Up</button>
+                <small>You have a account? <a href="">Log In</a></small>
+        </form>
+        <button class="close_btn">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+            </button>
+    </div>
+</div>
