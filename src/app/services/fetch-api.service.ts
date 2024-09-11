@@ -19,4 +19,5 @@ export class FetchApiService {
     })
     return result
   }
+
 }

@@ -5,9 +5,12 @@
     --element-color:#f4c228;
 }
 body{
+    padding: 0;
+    margin: 0;
     background-color: var(--backgroun-color);
 }
 *{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
     color: var(--element-color);
     box-sizing: border-box;
 }

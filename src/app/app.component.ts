@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { FormUrlComponent } from './form-url/form-url.component';
 import { OutputUrlComponent } from "./output-url/output-url.component";
 import { ErrorComponent } from './error/error.component';
+import { NavBarComponent } from "./nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormUrlComponent, OutputUrlComponent, ErrorComponent],
+  imports: [RouterOutlet, FormUrlComponent, OutputUrlComponent, ErrorComponent, NavBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

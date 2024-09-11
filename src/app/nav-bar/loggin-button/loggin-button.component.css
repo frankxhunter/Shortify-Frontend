@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.avatar{
+    background-color: rgb(26, 177, 87);
+    font-size: 22px;
+    padding: 5px;
+    color: white;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+    border-radius: 50%;
+    box-shadow: 0px 3px 3px 1px black;
+}
+.username{
+    font-size: 20px;
+    color: white;
+}
+.button{
+    background-color: var(--backgroun-color-secondary);
+    width: 90px;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.button:hover{
+    filter: brightness(.7);
+}
+.button:active{
+    filter: brightness(1);
+}
+.logginButton{
+    background-color: var(--element-color);
+    color: var(--backgroun-color);
+}

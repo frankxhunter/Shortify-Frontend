@@ -1,0 +1,10 @@
+<div class="container">
+    @if (username) {
+        <div class="avatar">{{username.charAt(0) | uppercase }}</div>
+        <div class="username">{{username  | titlecase }}</div>
+    }
+    @else {
+        <button class="logginButton button">Log in</button>
+        <button class="signupButton button">Sign Up</button>
+    }
+</div>
