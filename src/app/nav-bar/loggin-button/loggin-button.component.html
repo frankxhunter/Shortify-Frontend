@@ -4,7 +4,7 @@
         <div class="username">{{username  | titlecase }}</div>
     }
     @else {
-        <button class="logginButton button">Log in</button>
-        <button class="signupButton button">Sign Up</button>
+        <button class="logginButton button" (click)="logInActivate(true)">Log in</button>
+        <button class="signupButton button" (click)="signUpActivate(true)">Sign Up</button>
     }
 </div>

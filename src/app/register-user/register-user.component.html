@@ -1,36 +1,55 @@
 <div class="background_container">
     <div class="container">
         <h2 class="title">Welcome to <span>Shortify</span></h2>
-        <form action="" class="form">
+        <!-- <app-log-in></app-log-in> -->
+        <app-sign-up></app-sign-up>
+        <!-- <form action="" class="form" [formGroup]="userForm" id="userForm" (ngSubmit)="sendData()">
             <div class="input_container">
                 <label for="username">Username<sup>*</sup>: </label>
-                <input class="input" type="text" id="username" placeholder="Enter your username" name="username">
+                <input formControlName="username" [ngClass]="{'error_input': hasAnyError('username')}" class="input"
+                    type="text" id="username" placeholder="Enter your username" name="username">
+                <div class="error_message" *ngIf="hasError('username', 'required')">
+                    The username is required
+                </div>
+                <div class="error_message" *ngIf="hasError('username', 'pattern')">
+                    Enter a valid username
+                </div>
             </div>
             <div class="input_container">
                 <label for="email">Email<sup>*</sup>: </label>
-                <input  class="input"type="text" id="email" name="email" placeholder="Enter your email">
+                <input formControlName="email" [ngClass]="{'error_input': hasAnyError('email')}" class="input"
+                    type="text" id="email" name="email" placeholder="Enter your email">
+                <div class="error_message" *ngIf="hasError('email', 'required')">
+                    The email is required
+                </div>
+                <div class="error_message" *ngIf="hasError('email', 'pattern')">
+                    Enter a valid email
+                </div>
             </div>
             <div class="input_container">
                 <label for="password">Password<sup>*</sup>: </label>
-                <div class="input password_input">
-                    <input class="password" 
-                    [type]="passwordVisibility? 'text': 'password'"
-                    id="password" 
-                    name="password" 
-                    placeholder="Enter your password">
+                <div class="input password_input" [ngClass]="{'error_input': hasAnyError('password')}">
+                    <input class="password" formControlName="password" [type]="passwordVisibility? 'text': 'password'"
+                        id="password" name="password" placeholder="Enter your password">
                     <div class="visibility" (click)="changePasswordVisibility()">
                         @if (!passwordVisibility) {
-                            <span class="material-symbols-outlined">
-                                visibility_off
-                            </span>
+                        <span class="material-symbols-outlined">
+                            visibility_off
+                        </span>
                         }
                         @else {
-                            <span class="material-symbols-outlined">
-                                visibility
-                                </span>
+                        <span class="material-symbols-outlined">
+                            visibility
+                        </span>
                         }
 
                     </div>
+                </div>
+                <div class="error_message" *ngIf="hasError('password', 'required')">
+                    The password is required
+                </div>
+                <div class="error_message" *ngIf="hasError('password', 'pattern')">
+                    Enter a secure password (8-16 chars, uppercase, number, symbol)
                 </div>
             </div>
             <button type="submit" class="submit_btn">
@@ -38,12 +57,12 @@
                     login
                 </span>
                 Sign Up</button>
-                <small>You have a account? <a href="">Log In</a></small>
-        </form>
-        <button class="close_btn">
+            <small>You have a account? <a href="">Log In</a></small>
+        </form> -->
+        <button class="close_btn" (click)="closeAction()">
             <span class="material-symbols-outlined">
                 close
             </span>
-            </button>
+        </button>
     </div>
 </div>

@@ -18,7 +18,7 @@ export class LogginButtonComponent {
   username: string | null = null;
 
   ngOnInit(): void {
-    this.subcription = this.userRegisterService.estado$.subscribe(
+    this.subcription = this.userRegisterService.usernameState$.subscribe(
       (usernameNew) => {
         this.username = usernameNew;
       }
@@ -27,5 +27,13 @@ export class LogginButtonComponent {
 
   ngOnDestroy(): void {
     this.subcription?.unsubscribe();
+  }
+
+  logInActivate(state: boolean){
+    this.userRegisterService.changeLogInState(state)
+  }
+
+  signUpActivate(state: boolean){
+    this.userRegisterService.changeSignUpState(state)
   }
 }

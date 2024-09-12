@@ -5,12 +5,18 @@
   <div class="title">
     <h1>{{title}}</h1>
   </div>
+  @if (isLoginVisible) {
+  <app-register-user />
+  }
+  @if (isSigUpVisible) {
+  <app-register-user />
+  }
   <app-form-url (fetchEvent)="fetchDataRefresh($event)" (errorEvent)="errorFetch($event)"></app-form-url>
   @if (fetchData != "") {
-    <app-output-url [shortUrl]="fetchData"></app-output-url>
+  <app-output-url [shortUrl]="fetchData"></app-output-url>
   }
   @else if (errorConnection) {
-    <app-error></app-error>
+  <app-error></app-error>
   }
 
   <router-outlet></router-outlet>

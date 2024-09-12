@@ -1,18 +1,17 @@
 import { NgIf,NgClass} from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UserRegisterService } from '../services/user-register.service';
-import { LogInComponent } from "./log-in/log-in.component";
-import { SignUpComponent } from "./sign-up/sign-up.component";
+import { UserRegisterService } from '../../services/user-register.service';
 
 @Component({
-  selector: 'app-register-user',
+  selector: 'app-log-in',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgClass, LogInComponent, SignUpComponent],
-  templateUrl: './register-user.component.html',
-  styleUrl: './register-user.component.css'
+  imports: [NgIf, ReactiveFormsModule, NgClass],
+  templateUrl: './log-in.component.html',
+  styleUrl: './log-in.component.css'
 })
-export class RegisterUserComponent {
+export class LogInComponent {
+
   passwordVisibility = false;
 
   isClickBtnSend = false;
@@ -44,12 +43,6 @@ export class RegisterUserComponent {
   changePasswordVisibility(){
     this.passwordVisibility = !this.passwordVisibility;
   }
-
-  closeAction(){
-    this.userRegisterService.changeLogInState(false)
-    this.userRegisterService.changeSignUpState(false)
-  }
-
 
 
 }

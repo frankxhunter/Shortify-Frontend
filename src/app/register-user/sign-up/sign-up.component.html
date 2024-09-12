@@ -1,0 +1,45 @@
+<form action="" class="form" [formGroup]="userForm" id="userForm" (ngSubmit)="sendData()">
+    <div class="input_container">
+        <label for="email">Email<sup>*</sup>: </label>
+        <input formControlName="email" [ngClass]="{'error_input': hasAnyError('email')}" class="input"
+            type="text" id="email" name="email" placeholder="Enter your email">
+        <div class="error_message" *ngIf="hasError('email', 'required')">
+            The email is required
+        </div>
+        <div class="error_message" *ngIf="hasError('email', 'pattern')">
+            Enter a valid email
+        </div>
+    </div>
+    <div class="input_container">
+        <label for="password">Password<sup>*</sup>: </label>
+        <div class="input password_input" [ngClass]="{'error_input': hasAnyError('password')}">
+            <input class="password" formControlName="password" [type]="passwordVisibility? 'text': 'password'"
+                id="password" name="password" placeholder="Enter your password">
+            <div class="visibility" (click)="changePasswordVisibility()">
+                @if (!passwordVisibility) {
+                <span class="material-symbols-outlined">
+                    visibility_off
+                </span>
+                }
+                @else {
+                <span class="material-symbols-outlined">
+                    visibility
+                </span>
+                }
+
+            </div>
+        </div>
+        <div class="error_message" *ngIf="hasError('password', 'required')">
+            The password is required
+        </div>
+        <div class="error_message" *ngIf="hasError('password', 'pattern')">
+            Enter a secure password (8-16 chars, uppercase, number, symbol)
+        </div>
+    </div>
+    <button type="submit" class="submit_btn">
+        <span class="material-symbols-outlined">
+            login
+        </span>
+        Log In</button>
+    <small>You have not a account? <a href="">Sign Up</a></small>
+</form>
