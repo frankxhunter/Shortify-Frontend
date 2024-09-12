@@ -1,5 +1,18 @@
 <form action="" class="form" [formGroup]="userForm" id="userForm" (ngSubmit)="sendData()">
     <div class="input_container">
+        <label for="username">Username<sup>*</sup>: </label>
+        <input formControlName="username" [ngClass]="{'error_input': hasAnyError('username')}" class="input"
+            type="text" id="username" placeholder="Enter your username" name="username">
+        <div class="error_message" *ngIf="hasError('username', 'required')">
+            The username is required
+        </div>
+        <div class="error_message" *ngIf="hasError('username', 'pattern')">
+            Enter a valid username
+        </div>
+    </div>
+    
+    <div class="input_container">
+        
         <label for="email">Email<sup>*</sup>: </label>
         <input formControlName="email" [ngClass]="{'error_input': hasAnyError('email')}" class="input"
             type="text" id="email" name="email" placeholder="Enter your email">
@@ -41,5 +54,5 @@
             login
         </span>
         Log In</button>
-    <small>You have not a account? <a href="">Sign Up</a></small>
+    <small>You have a account? <span class="redirectButton" (click)="changeRegister()">Log In</span></small>
 </form>

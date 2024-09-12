@@ -13,36 +13,19 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
   styleUrl: './register-user.component.css'
 })
 export class RegisterUserComponent {
-  passwordVisibility = false;
-
-  isClickBtnSend = false;
 
   userRegisterService = inject(UserRegisterService)
 
-  userForm: FormGroup;
+  logInState = false
+  signUpState = false
 
-  constructor(_form:FormBuilder){
-    this.userForm = _form.group({
-      username: ["", [Validators.required, Validators.pattern(/^\w[\w.]{0,28}\w$/)]],
-      email: ["", [Validators.required, Validators.pattern(/^[a-zA-Z\d-_]+@[a-zA-Z0-9.]+.[a-z]+$/)]],
-      password: ["", [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)(?!.*\s).{8,16}$/)]],
-      
+  ngOnInit(): void {
+    this.userRegisterService.logInState$.subscribe((newState)=>{
+      this.logInState = newState;
     })
-  }
-
-  hasError(controlName: string, typeError: string){
-    return (this.userForm.get(controlName)?.getError(typeError) && (this.userForm.get(controlName)?.touched || this.isClickBtnSend));
-  }
-  hasAnyError(controlName: string){
-    return this.userForm.get(controlName)?.errors && (this.userForm.get(controlName)?.touched || this.isClickBtnSend)
-  }
-
-  sendData(){
-    this.isClickBtnSend = true;
-  }
-
-  changePasswordVisibility(){
-    this.passwordVisibility = !this.passwordVisibility;
+    this.userRegisterService.signUpState$.subscribe((newState)=>{
+      this.signUpState = newState
+    })
   }
 
   closeAction(){

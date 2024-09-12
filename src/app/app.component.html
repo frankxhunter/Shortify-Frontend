@@ -5,10 +5,7 @@
   <div class="title">
     <h1>{{title}}</h1>
   </div>
-  @if (isLoginVisible) {
-  <app-register-user />
-  }
-  @if (isSigUpVisible) {
+  @if (isRegisterUserActived) {
   <app-register-user />
   }
   <app-form-url (fetchEvent)="fetchDataRefresh($event)" (errorEvent)="errorFetch($event)"></app-form-url>

@@ -28,6 +28,10 @@ export class UserRegisterService {
     this.usernameSubject.next(this.getUsername());
   }
 
+  checkIsAnyRegisterIsActivated(){
+    return this.logInSubject.getValue() || this.signUpSubject.getValue()
+  }
+
   changeLogInState(newState: boolean){
     this.logInSubject.next(newState);
     this.signUpSubject.next(false);

@@ -22,7 +22,6 @@ export class LogInComponent {
 
   constructor(_form:FormBuilder){
     this.userForm = _form.group({
-      username: ["", [Validators.required, Validators.pattern(/^\w[\w.]{0,28}\w$/)]],
       email: ["", [Validators.required, Validators.pattern(/^[a-zA-Z\d-_]+@[a-zA-Z0-9.]+.[a-z]+$/)]],
       password: ["", [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)(?!.*\s).{8,16}$/)]],
       
@@ -42,6 +41,10 @@ export class LogInComponent {
 
   changePasswordVisibility(){
     this.passwordVisibility = !this.passwordVisibility;
+  }
+
+  changeRegister(){
+    this.userRegisterService.changeSignUpState(true)
   }
 
 

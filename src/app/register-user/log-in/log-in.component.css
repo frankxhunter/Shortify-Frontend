@@ -97,8 +97,11 @@ sup {
 small{
     font-size:17px ;
 }
-a{
+.redirectButton{
     color: blue !important;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .error_input{
