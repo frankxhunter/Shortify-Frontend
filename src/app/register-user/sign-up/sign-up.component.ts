@@ -37,6 +37,11 @@ export class SignUpComponent {
 
   sendData(){
     this.isClickBtnSend = true;
+    this.userRegisterService.fetchSignUp(this.userForm.value).subscribe((data: any)=>{
+      console.log(data);
+      this.userRegisterService.setUserName(data.username)
+      this.userRegisterService.changeSignUpState(false);
+    })
   }
 
   changePasswordVisibility(){
