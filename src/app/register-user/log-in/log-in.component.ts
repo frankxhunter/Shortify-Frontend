@@ -17,6 +17,8 @@ export class LogInComponent {
 
   loading = false;
 
+  error : string | null = null;
+
   isClickBtnSend = false;
 
   userRegisterService = inject(UserRegisterService)
@@ -39,6 +41,7 @@ export class LogInComponent {
   }
 
   sendData(){
+    this.error = null
     this.isClickBtnSend = true;
     this.loading = true;
     this.userRegisterService.fetchLogIn(this.userForm.value).subscribe((data: any)=>{
@@ -46,6 +49,10 @@ export class LogInComponent {
       console.log(data);
       this.userRegisterService.setUserName(data.username)
       this.userRegisterService.changeLogInState(false);
+    }, error=>{
+      this.loading = false;
+      console.log(error);
+      this.error = error.error.error;
     })
   }
 

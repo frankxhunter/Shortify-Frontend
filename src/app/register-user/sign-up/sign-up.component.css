@@ -118,3 +118,7 @@ small{
 .error_input:focus-within{
     border: 2px solid red;
 }
+.msg_error {
+    color: red;
+    font-size: 20px;
+}

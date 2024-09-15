@@ -47,5 +47,8 @@
             <mat-spinner diameter="50"></mat-spinner>
 
         }
+        @if (error) {
+            <div class="msg_error">{{error}}</div>
+        }
     <small>Don't have an account? <span class="redirectButton" (click)="changeRegister()">Sign Up</span></small>
 </form>
