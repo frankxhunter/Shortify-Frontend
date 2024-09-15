@@ -1,7 +1,7 @@
 <section class="form-section">
     <form id="form" class="form" (ngSubmit)="fetchData()" [formGroup]="urlForm" id="urlForm">
         <input type="text" class="inputUrl" id="inputUrl" placeholder="Enter the URL you want shorten"
-            [(ngModel)]="urlValue" required autocomplete="off" formControlName="url"
+            required autocomplete="off" formControlName="url"
             [ngClass]="{'is_invalid': hasErrorsGeneral('url')}">
         <button type="submit" class="btnSend">Shorter</button>
         @if (loading) {
