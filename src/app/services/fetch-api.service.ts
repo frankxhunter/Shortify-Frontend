@@ -12,6 +12,9 @@ export class FetchApiService {
   constructor(private httpClient: HttpClient){}
 
   public generateShortURL(originalUrl: string){
+    console.log("hola");
+    console.log(originalUrl);
+    console.log("hola");
     const params = new HttpParams().set("url", originalUrl)
     const result =  this.httpClient.post<Url>(API_URLS.createURL, params, {
       headers: {"content-type": "application/x-www-form-urlencoded"}

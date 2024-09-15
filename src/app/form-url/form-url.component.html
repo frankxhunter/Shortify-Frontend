@@ -5,7 +5,7 @@
             [ngClass]="{'is_invalid': hasErrorsGeneral('url')}">
         <button type="submit" class="btnSend">Shorter</button>
         @if (loading) {
-        <mat-spinner diameter="50"></mat-spinner>
+        <mat-spinner diameter="50" id="loader"></mat-spinner>
         }
         @if(errorInput){
         <small class="error required_error" [ngClass]="{'error_show': hasErrors('url', 'required')}">

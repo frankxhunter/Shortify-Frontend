@@ -74,7 +74,7 @@ export class FormUrlComponent {
       this.loading = true;
       this.errorInput = false;
 
-      this.fetchApiService.generateShortURL(this.urlValue).subscribe(
+      this.fetchApiService.generateShortURL(this.urlForm.value.url).subscribe(
         (data) => {
           this.loading= false;
           const shortURLFull = API_URLS.baseURL + '/' + data.shortUrl;
@@ -83,6 +83,7 @@ export class FormUrlComponent {
           this.fetchEvent.emit(shortURLFull);
         },
         (error) => {
+          this.loading = false;
           console.log(error);
           this.errorEvent.emit(true);
         }
