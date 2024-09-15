@@ -2,11 +2,11 @@ import { NgClass, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserRegisterService } from '../../services/user-register.service';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [NgIf, ReactiveFormsModule, NgClass],
+  imports: [NgIf, ReactiveFormsModule, NgClass, MatProgressSpinnerModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
@@ -14,6 +14,8 @@ export class SignUpComponent {
   passwordVisibility = false;
 
   isClickBtnSend = false;
+
+  loading = false;
 
   userRegisterService = inject(UserRegisterService)
 
@@ -37,7 +39,9 @@ export class SignUpComponent {
 
   sendData(){
     this.isClickBtnSend = true;
+    this.loading = true;
     this.userRegisterService.fetchSignUp(this.userForm.value).subscribe((data: any)=>{
+      this.loading= false;
       console.log(data);
       this.userRegisterService.setUserName(data.username)
       this.userRegisterService.changeSignUpState(false);

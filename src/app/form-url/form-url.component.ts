@@ -9,13 +9,15 @@ import {
 } from '@angular/forms';
 import { API_URLS } from '../api-urls';
 import { FetchApiService } from '../services/fetch-api.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 import { url } from 'inspector';
 import { error } from 'console';
 
 @Component({
   selector: 'app-form-url',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgClass, NgStyle],
+  imports: [FormsModule, ReactiveFormsModule, NgClass, NgStyle, MatProgressSpinnerModule],
   templateUrl: './form-url.component.html',
   styleUrl: './form-url.component.css',
 })
@@ -26,7 +28,7 @@ export class FormUrlComponent {
 
   urlForm: FormGroup;
 
-  loader = false;
+  loading = false;
 
   errorInput = false;
 
@@ -69,10 +71,12 @@ export class FormUrlComponent {
 
   fetchData() {
     if (!this.hasErrorsGeneral("url")) {
+      this.loading = true;
       this.errorInput = false;
 
       this.fetchApiService.generateShortURL(this.urlValue).subscribe(
         (data) => {
+          this.loading= false;
           const shortURLFull = API_URLS.baseURL + '/' + data.shortUrl;
 
           //console.log(shortURLFull);

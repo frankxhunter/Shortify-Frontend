@@ -2,17 +2,20 @@ import { NgIf,NgClass} from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserRegisterService } from '../../services/user-register.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-log-in',
   standalone: true,
-  imports: [NgIf, ReactiveFormsModule, NgClass],
+  imports: [NgIf, ReactiveFormsModule, NgClass, MatProgressSpinnerModule],
   templateUrl: './log-in.component.html',
   styleUrl: './log-in.component.css'
 })
 export class LogInComponent {
 
   passwordVisibility = false;
+
+  loading = false;
 
   isClickBtnSend = false;
 
@@ -37,7 +40,9 @@ export class LogInComponent {
 
   sendData(){
     this.isClickBtnSend = true;
+    this.loading = true;
     this.userRegisterService.fetchLogIn(this.userForm.value).subscribe((data: any)=>{
+      this.loading = false;
       console.log(data);
       this.userRegisterService.setUserName(data.username)
       this.userRegisterService.changeLogInState(false);

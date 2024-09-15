@@ -43,5 +43,9 @@
             login
         </span>
         Sign Up</button>
+        @if (loading) {
+            <mat-spinner diameter="50"></mat-spinner>
+
+        }
     <small>Don't have an account? <span class="redirectButton" (click)="changeRegister()">Sign Up</span></small>
 </form>

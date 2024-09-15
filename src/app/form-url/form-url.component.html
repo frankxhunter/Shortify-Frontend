@@ -4,18 +4,21 @@
             [(ngModel)]="urlValue" required autocomplete="off" formControlName="url"
             [ngClass]="{'is_invalid': hasErrorsGeneral('url')}">
         <button type="submit" class="btnSend">Shorter</button>
+        @if (loading) {
+        <mat-spinner diameter="50"></mat-spinner>
+        }
         @if(errorInput){
-            <small class="error required_error" [ngClass]="{'error_show': hasErrors('url', 'required')}">
-                <span class="material-symbols-outlined">
-                    warning
+        <small class="error required_error" [ngClass]="{'error_show': hasErrors('url', 'required')}">
+            <span class="material-symbols-outlined">
+                warning
             </span>
             La URL es obligatoria</small>
-            <small class="error formate_error" [ngClass]="{'error_show': hasErrors('url', 'pattern')}">
-                <span class="material-symbols-outlined">
-                    warning
-                </span>
-                El formato de la URL es incorrecto</small>
-            }
+        <small class="error formate_error" [ngClass]="{'error_show': hasErrors('url', 'pattern')}">
+            <span class="material-symbols-outlined">
+                warning
+            </span>
+            El formato de la URL es incorrecto</small>
+        }
     </form>
 
 </section>
