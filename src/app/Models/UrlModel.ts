@@ -1,3 +1,3 @@
-export interface Url{
+export interface ShortUrl{
     shortUrl: string
 }

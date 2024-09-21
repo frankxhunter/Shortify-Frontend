@@ -1,37 +1,41 @@
-import { Component } from '@angular/core';
-import {MatTableModule} from '@angular/material/table'
+import { Component, inject, ViewEncapsulation } from '@angular/core';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { Url } from '../interfaces/url.interface';
+import { FetchApiService } from '../services/fetch-api.service';
 
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
 
 @Component({
   selector: 'app-links',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatFormFieldModule, MatInputModule, MatTableModule],
   templateUrl: './links.component.html',
-  styleUrl: './links.component.css'
+  styleUrl: './links.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class LinksComponent {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['id', 'Short_Url', 'Original_Url'];
+  fetchApiService: FetchApiService = inject(FetchApiService)
+  dataSource =  new MatTableDataSource<Url>([]);;
+  baseUrl = ""
+
+
+  constructor() {
+    //Add 'implements OnInit' to the class.
+    this.baseUrl = window.location.origin;
+    this.fetchApiService.getAllUrlsOfUser().subscribe((data: Url[])=>{
+      console.log(data);
+      this.dataSource = new MatTableDataSource(data);
+    })
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    if(this.dataSource instanceof MatTableDataSource){
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
+  }
 
 }

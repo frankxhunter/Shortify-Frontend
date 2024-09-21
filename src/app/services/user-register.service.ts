@@ -52,6 +52,7 @@ export class UserRegisterService {
 
     return this.httpClient.post(API_URLS.logInURL, params, {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      withCredentials: true,
       responseType: 'json'
     });
   }
@@ -63,6 +64,7 @@ export class UserRegisterService {
 
     return this.httpClient.post(API_URLS.signUpURL, params, {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      withCredentials: true,
       responseType: 'json'
     });
   }

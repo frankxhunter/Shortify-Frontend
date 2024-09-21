@@ -1,3 +1,39 @@
-table{
+.container_data {
+    margin: auto;
+    margin: 100px auto;
+    padding-bottom: 100px;
+    width: 80%;
+}
+.container_table{
+    height: 400px  !important;
+    overflow: auto !important;
+    scrollbar-width: none;
+}
+
+.filter * {
+    background-color: rgba(39, 17, 17, 0.972) !important;
+    font-size: 20px;
+}
+.mat-mdc-form-field {
     width: 100%;
+}
+input{
+    color: var(--element-color) !important;
+
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+    background-color: var(--background-color) !important;
+}
+
+th {
+    background-color: rgba(39, 17, 17, 0.972) !important;
+}
+
+td {
+    background-color: rgba(65, 47, 47, 0.876) !important;
+}
+
+table * {
+    font-size: 20px;
 }
