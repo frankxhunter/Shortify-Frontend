@@ -30,6 +30,13 @@ export class LinksComponent {
       this.dataSource = new MatTableDataSource(data);
     })
   }
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.fetchApiService.stateUrlList$.subscribe(data=>{
+      this.dataSource = new MatTableDataSource(data);
+    })
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

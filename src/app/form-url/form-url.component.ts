@@ -77,6 +77,7 @@ export class FormUrlComponent {
       this.fetchApiService.generateShortURL(this.urlForm.value.url).subscribe(
         (data) => {
           this.loading= false;
+          this.fetchApiService.refreshList();
           const shortURLFull = API_URLS.baseURL + '/' + data.shortUrl;
 
           //console.log(shortURLFull);
