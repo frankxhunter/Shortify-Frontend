@@ -1,7 +1,7 @@
 import { NgIf,NgClass} from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UserRegisterService } from '../../services/user-register.service';
+import { UserRegisterService } from '../../../../services/user-register.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({

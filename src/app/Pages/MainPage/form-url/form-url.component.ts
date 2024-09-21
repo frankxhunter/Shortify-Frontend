@@ -7,8 +7,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { API_URLS } from '../api-urls';
-import { FetchApiService } from '../services/fetch-api.service';
+import { API_URLS } from '../../../api-urls';
+import { FetchApiService } from '../../../services/fetch-api.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { url } from 'inspector';

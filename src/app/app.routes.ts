@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import {LinksComponent} from  "./links/links.component"
+import {LinksComponent} from  "./Pages/LinksPage/links/links.component"
 
 
 export const routes: Routes = [

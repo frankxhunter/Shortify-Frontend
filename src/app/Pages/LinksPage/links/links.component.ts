@@ -2,8 +2,8 @@ import { Component, inject, ViewEncapsulation } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { Url } from '../interfaces/url.interface';
-import { FetchApiService } from '../services/fetch-api.service';
+import { Url } from '../../../interfaces/url.interface';
+import { FetchApiService } from '../../../services/fetch-api.service';
 
 
 @Component({

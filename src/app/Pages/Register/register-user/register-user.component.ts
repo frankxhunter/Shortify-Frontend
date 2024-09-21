@@ -1,7 +1,7 @@
 import { NgIf,NgClass} from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UserRegisterService } from '../services/user-register.service';
+import { UserRegisterService } from '../../../services/user-register.service';
 import { LogInComponent } from "./log-in/log-in.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 

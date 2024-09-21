@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FormUrlComponent } from './form-url/form-url.component';
-import { OutputUrlComponent } from './output-url/output-url.component';
-import { ErrorComponent } from './error/error.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FormUrlComponent } from './Pages/MainPage/form-url/form-url.component';
+import { OutputUrlComponent } from './Pages/MainPage/output-url/output-url.component';
+import { ErrorComponent } from './Pages/error/error.component';
+import { NavBarComponent } from './Pages/MainPage/nav-bar/nav-bar.component';
 import { UserRegisterService } from './services/user-register.service';
-import { RegisterUserComponent } from './register-user/register-user.component';
+import { RegisterUserComponent } from './Pages/Register/register-user/register-user.component';
 
 @Component({
   selector: 'app-root',

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { UserRegisterService } from '../../services/user-register.service';
+import { UserRegisterService } from '../../../../services/user-register.service';
 import { TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { title } from 'process';
 
