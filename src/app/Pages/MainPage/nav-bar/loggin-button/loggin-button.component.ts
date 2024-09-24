@@ -1,8 +1,7 @@
+import { TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UserRegisterService } from '../../../../services/user-register.service';
-import { TitleCasePipe, UpperCasePipe } from '@angular/common';
-import { title } from 'process';
 
 @Component({
   selector: 'app-loggin-button',
@@ -24,6 +23,12 @@ export class LogginButtonComponent {
       }
     );
   }
+
+  ngAfterContentInit(): void {
+    if(window != null)
+    this.userRegisterService.checkUsername();
+  }
+
 
   ngOnDestroy(): void {
     this.subcription?.unsubscribe();

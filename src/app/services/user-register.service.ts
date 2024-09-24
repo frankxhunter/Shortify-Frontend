@@ -1,7 +1,9 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { API_URLS } from '../api-urls';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { User } from '../interfaces/User.interface';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -17,19 +19,18 @@ export class UserRegisterService {
   logInState$ = this.logInSubject.asObservable();
   signUpState$ = this.signUpSubject.asObservable();
 
-  constructor() {
-    this.checkUsername();
-  }
+  plataformBrower = inject(PLATFORM_ID);
 
   checkUsername() {
-    this.usernameSubject.next(this.getUsername());
+    this.fetchCheckUser().subscribe((user) => {
+      if (user?.username) {
+        this.setUserName(user.username);
+      }
+    });
   }
 
-  setUserName(username: string){
-    if(this.isLocalStorageAvailable()){
-      localStorage.setItem('username', username)
-      this.checkUsername();
-    }
+  setUserName(username: string) {
+    this.usernameSubject.next(username);
   }
 
   checkIsAnyRegisterIsActivated() {
@@ -53,7 +54,7 @@ export class UserRegisterService {
     return this.httpClient.post(API_URLS.logInURL, params, {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       withCredentials: true,
-      responseType: 'json'
+      responseType: 'json',
     });
   }
   fetchSignUp(dataUser: any) {
@@ -65,24 +66,14 @@ export class UserRegisterService {
     return this.httpClient.post(API_URLS.signUpURL, params, {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       withCredentials: true,
-      responseType: 'json'
+      responseType: 'json',
     });
   }
 
-  private getUsername() {
-    return this.isLocalStorageAvailable()
-      ? localStorage.getItem('username')
-      : null;
-  }
-
-  private isLocalStorageAvailable() {
-    try {
-      const test = 'test';
-      localStorage.setItem(test, test);
-      localStorage.removeItem(test);
-      return true;
-    } catch {
-      return false;
-    }
+  private fetchCheckUser() {
+    return this.httpClient.get<User>(API_URLS.logInURL, {
+      withCredentials: true,
+      responseType: 'json',
+    });
   }
 }
