@@ -1,48 +1,25 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { Url } from '../../../interfaces/url.interface';
-import { FetchApiService } from '../../../services/fetch-api.service';
+import { UserRegisterService } from '../../../services/user-register.service';
+import { TableLinksComponent } from '../table-links/table-links.component';
+import { RequireAutheticationErrorComponent } from '../../require-authetication-error/require-authetication-error.component';
 
 
 @Component({
   selector: 'app-links',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule],
+  imports: [TableLinksComponent, RequireAutheticationErrorComponent],
   templateUrl: './links.component.html',
   styleUrl: './links.component.css',
   encapsulation: ViewEncapsulation.None
 })
 export class LinksComponent {
+registerUserService = inject(UserRegisterService)
 
-  displayedColumns: string[] = ['id', 'Short_Url', 'Original_Url'];
-  fetchApiService: FetchApiService = inject(FetchApiService)
-  dataSource =  new MatTableDataSource<Url>([]);;
-  baseUrl = ""
-
-
-  constructor() {
-    //Add 'implements OnInit' to the class.
-    this.baseUrl = window.location.origin;
-    this.fetchApiService.getAllUrlsOfUser().subscribe((data: Url[])=>{
-      console.log(data);
-      this.dataSource = new MatTableDataSource(data);
-    })
-  }
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.fetchApiService.stateUrlList$.subscribe(data=>{
-      this.dataSource = new MatTableDataSource(data);
-    })
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    if(this.dataSource instanceof MatTableDataSource){
-      this.dataSource.filter = filterValue.trim().toLowerCase();
-    }
-  }
-
+username: string | null = null;
+ 
+ngOnInit(): void {
+  this.registerUserService.usernameState$.subscribe(data=>{
+    this.username = data;
+  })
+}
 }
