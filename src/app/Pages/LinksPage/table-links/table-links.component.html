@@ -21,13 +21,20 @@
             <!-- Short Url Column -->
             <ng-container matColumnDef="Short_Url">
                 <th mat-header-cell *matHeaderCellDef>Short_Url</th>
-                <td mat-cell *matCellDef="let element"> {{baseUrl+"/" + element.shortUrl}} </td>
+                <td mat-cell *matCellDef="let element" >
+                    <div class="container">
+                        {{baseUrl+"/" + element.shortUrl}}
+                        <app-copy-button [text]="baseUrl+'/' + element.shortUrl"/>
+                    </div>
+                </td>
             </ng-container>
 
             <!-- Original Url Column -->
             <ng-container matColumnDef="Original_Url">
                 <th mat-header-cell *matHeaderCellDef>Original_Url</th>
-                <td mat-cell *matCellDef="let element"> {{element.originalUrl}} </td>
+                <td mat-cell *matCellDef="let element"> 
+                    <app-editable-button [data]="element.originalUrl"/>
+                </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

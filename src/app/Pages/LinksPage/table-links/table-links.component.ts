@@ -6,11 +6,13 @@ import { Url } from '../../../interfaces/url.interface';
 import { FetchApiService } from '../../../services/fetch-api.service';
 import { API_URLS } from '../../../api-urls';
 import { NgClass } from '@angular/common';
+import { CopyButtonComponent } from "../../../UtilsComponents/copy-button/copy-button.component";
+import { EditableButtonComponent } from "../../../UtilsComponents/editable-button/editable-button.component";
 
 @Component({
   selector: 'app-table-links',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule, NgClass],
+  imports: [MatFormFieldModule, MatInputModule, MatTableModule, NgClass, CopyButtonComponent, EditableButtonComponent],
   templateUrl: './table-links.component.html',
   styleUrl: './table-links.component.css'
 })
@@ -20,6 +22,7 @@ export class TableLinksComponent {
   dataSource =  new MatTableDataSource<Url>([]);;
   baseUrl = API_URLS.baseURL
   inputActived = false;
+  textCopied= false;
 
 
   constructor() {
@@ -50,5 +53,17 @@ export class TableLinksComponent {
     }
     console.log(filterValue);
     console.log(this.inputActived);
+  }
+  
+
+  copyText(text: string){
+    if(navigator && navigator.clipboard){
+      navigator.clipboard.writeText(text).then(()=>{
+        this.textCopied = true;
+        setTimeout(()=>{
+          this.textCopied = false;
+        },2000)
+      })
+    }
   }
 }

@@ -1,0 +1,28 @@
+<div class="container">
+    @if(!editMode){
+    <div class="dataContainer">{{data}}</div>
+    <button (click)="changeEditMode(true)">
+        <span class="material-symbols-outlined">
+            edit
+        </span>
+    </button>
+    }
+    @else{
+    <form class="form" id="form" (ngSubmit)="submitForm()" [formGroup]="form">
+        <input class="input" type="text" formControlName="dataForm">
+        <button type="submit">
+            <span class="material-symbols-outlined">
+                check
+            </span>
+        </button>
+    </form>
+    <button (click)="changeEditMode(false)">
+        <span class="material-symbols-outlined">
+            close
+        </span>
+    </button>
+    }
+    @if (error) {
+        <div class="error">{{error}}</div>
+    }
+</div>

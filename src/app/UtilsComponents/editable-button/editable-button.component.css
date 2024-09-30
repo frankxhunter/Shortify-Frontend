@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+button {
+    background: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+button:hover {
+    border: 1px solid black;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid;
+    width: 90%;
+    font-size: 20px;
+    outline: none;
+}
+
+.error {
+    position: absolute;
+    bottom: 8%;
+    right: 86px;
+    z-index: 100;
+    background: gray;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 21px;
+    color: black;
+    animation: appearAndDisappear 2s linear;
+
+}
+
+
+@keyframes appearAndDisappear {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+}
