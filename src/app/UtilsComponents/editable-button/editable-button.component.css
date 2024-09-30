@@ -69,3 +69,11 @@ input {
         opacity: 0;
     }
 }
+
+#id{
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+}

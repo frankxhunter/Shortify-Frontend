@@ -36,4 +36,14 @@ export class FetchApiService {
       withCredentials: true,
     });
   }
+
+  public updateOriginalUrl(id: number, originalUrl: string) {
+    let params = new HttpParams().set('id', id).set('originalUrl', originalUrl);
+
+
+    return this.httpClient.post(API_URLS.getUrls, params, {
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      withCredentials: true,
+    });
+  }
 }

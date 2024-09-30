@@ -73,3 +73,14 @@ td {
 table * {
     font-size: 20px;
 }
+
+.id{
+    width: 1% !important;
+}
+.shortUrl{
+    width: 45% !important;
+}
+.originalUrl{
+    width: 50% !important;
+    max-width: 50% !important;
+}
