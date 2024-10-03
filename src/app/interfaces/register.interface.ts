@@ -3,4 +3,5 @@ export interface Register {
   browser?: string;
   os?: string;
   architecture?: string;
+  date: string;
 }
