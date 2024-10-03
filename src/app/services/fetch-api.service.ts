@@ -4,6 +4,7 @@ import { ShortUrl } from '../Models/UrlModel';
 import { API_URLS } from '../api-urls';
 import { Url } from '../interfaces/url.interface';
 import { BehaviorSubject } from 'rxjs';
+import { Register } from '../interfaces/register.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -40,8 +41,18 @@ export class FetchApiService {
   public updateOriginalUrl(id: number, originalUrl: string) {
     let params = new HttpParams().set('id', id).set('originalUrl', originalUrl);
 
-
     return this.httpClient.post(API_URLS.getUrls, params, {
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      withCredentials: true,
+    });
+  }
+
+  public getRegisterOfUrl(idUrl: string) {
+    console.log(idUrl);
+    const params = new HttpParams().set('id', idUrl);
+
+    return this.httpClient.get<Register[]>(API_URLS.getRegisters, {
+      params: params,
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       withCredentials: true,
     });

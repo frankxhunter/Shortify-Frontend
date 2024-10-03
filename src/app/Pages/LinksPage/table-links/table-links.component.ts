@@ -8,11 +8,12 @@ import { API_URLS } from '../../../api-urls';
 import { NgClass } from '@angular/common';
 import { CopyButtonComponent } from "../../../UtilsComponents/copy-button/copy-button.component";
 import { EditableButtonComponent } from "../../../UtilsComponents/editable-button/editable-button.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-table-links',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule, NgClass, CopyButtonComponent, EditableButtonComponent],
+  imports: [RouterLink, MatFormFieldModule, MatInputModule, MatTableModule, NgClass, CopyButtonComponent, EditableButtonComponent],
   templateUrl: './table-links.component.html',
   styleUrl: './table-links.component.css'
 })

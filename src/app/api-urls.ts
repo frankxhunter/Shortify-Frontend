@@ -4,4 +4,5 @@ export const API_URLS = {
   logInURL: "http://localhost:8080/shortify/users/login",
   signUpURL: "http://localhost:8080/shortify/users/signup",
   getUrls: "http://localhost:8080/shortify/urls",
+  getRegisters: "http://localhost:8080/shortify/urls/request",
 };
