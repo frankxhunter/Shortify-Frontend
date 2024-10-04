@@ -2,8 +2,10 @@
 :root{
     --background-color: #361711;
     --background-color-secondary: #53241b;
+    --background-color-thirst: #413636;
     --element-color:#f4c228;
 }
+
 body{
     padding: 0;
     margin: 0;

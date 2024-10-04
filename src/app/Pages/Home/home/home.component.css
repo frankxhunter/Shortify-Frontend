@@ -1,0 +1,20 @@
+section{
+    padding-bottom: 50px;
+}
+hr{
+    border: 1px solid var(--element-color);
+}
+h1{
+    padding: 0px 20px;
+    margin: 0;
+}
+
+.container-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 35px;
+    margin-top: 30px;
+}

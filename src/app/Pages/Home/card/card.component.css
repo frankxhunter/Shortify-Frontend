@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 366px;
+    height: 536px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 15px black;
+    /* background-color: var(--background-color-secondary); */
+    background-color: var(--background-color-thirst);
+    color: rgb(255, 255, 255);
+
+}
+
+img {
+    height: 60%;
+    object-fit: scale-down;
+}
+
+p {
+    color: white;
+
+}
+
+.content {
+    padding: 15px;
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+hr {
+    border: 1px solid red;
+    width: 100%;
+}
+
+button {
+    background-color: var(--element-color);
+    /* color: var(--background-color); */
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px;
+    font-size: 25px;
+    width: 150px;
+    border-radius: 10px;
+    margin: 10px 0px;
+}

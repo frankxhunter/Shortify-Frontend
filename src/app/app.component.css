@@ -1,5 +1,5 @@
-.title{
-    margin:auto;
+.title {
+    margin: auto;
     margin-top: 40px;
     border: 2px solid;
     border-radius: 10px;
@@ -13,7 +13,50 @@
     font-size: 30px;
     box-shadow: 1px 20px 20px 5px black;
 }
-h1{
+
+h1 {
     margin: 0;
 
+}
+
+header {
+    height: 10vh;
+}
+
+section {
+    height: 90vh;
+    position: relative;
+    /* border: 1px solid ; */
+    box-sizing: border-box;
+}
+
+span {
+    font-size: 50px;
+    margin: auto;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: moveHand 2s linear infinite;
+}
+
+@keyframes moveHand {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    25% {
+        transform: translate(-50%, -30%);
+    }
+
+    50% {
+        transform: translate(-50%, 0);
+    }
+
+    75% {
+        transform: translate(-50%, 30%);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+    }
 }

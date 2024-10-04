@@ -1,0 +1,9 @@
+<section>
+    <h1>Reasons to Sign Up!</h1>
+    <hr>
+    <div class="container-cards">
+        @for (data of dataCards; track $index) {
+            <app-card [image]="data.image" [description]="data.description" [title]="data.title" [link]="data.link"></app-card>
+        }
+    </div>
+</section>

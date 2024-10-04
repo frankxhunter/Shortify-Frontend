@@ -2,19 +2,22 @@
   <app-nav-bar></app-nav-bar>
 </header>
 <main>
-  <div class="title">
-    <h1>{{title}}</h1>
-  </div>
-  @if (isRegisterUserActived) {
-  <app-register-user />
-  }
-  <app-form-url (fetchEvent)="fetchDataRefresh($event)" (errorEvent)="errorFetch($event)"></app-form-url>
-  @if (fetchData != "") {
-  <app-output-url [shortUrl]="fetchData"></app-output-url>
-  }
-  @else if (errorConnection) {
-  <app-error></app-error>
-  }
+<section>
+    <div class="title">
+      <h1>{{title}}</h1>
+    </div>
+    @if (isRegisterUserActived) {
+    <app-register-user />
+    }
+    <app-form-url (fetchEvent)="fetchDataRefresh($event)" (errorEvent)="errorFetch($event)"></app-form-url>
+    @if (fetchData != "") {
+    <app-output-url [shortUrl]="fetchData"></app-output-url>
+    }
+    @else if (errorConnection) {
+    <app-error></app-error>
+    }
+    <span>👇</span>
+</section>
 
   <router-outlet></router-outlet>
 </main>
