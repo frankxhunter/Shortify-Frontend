@@ -24,13 +24,15 @@ header {
 }
 
 section {
-    height: 90vh;
+    height: 350px;
     position: relative;
     /* border: 1px solid ; */
     box-sizing: border-box;
 }
 
 span {
+
+    display: none;
     font-size: 50px;
     margin: auto;
     position: absolute;
@@ -59,4 +61,15 @@ span {
     100% {
         transform: translate(-50%, 0);
     }
+}
+
+footer{
+    padding-top: 100px ;
+    padding-bottom: 50px ;
+    text-align: center;
+    font-size: 30px;
+}
+
+footer img{
+    width: 30px;
 }
