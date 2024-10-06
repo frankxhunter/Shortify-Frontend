@@ -5,9 +5,9 @@
 }
 
 .container_table {
-    height: 400px !important;
+    max-height: 400px !important;
     overflow: auto !important;
-    scrollbar-width: none;
+    scrollbar-width: thin;
 }
 
 .filter_container {
@@ -63,7 +63,9 @@ th {
 td {
     background-color: rgba(65, 47, 47, 0.876) !important;
 }
-.container{
+
+
+.container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,13 +75,26 @@ table * {
     font-size: 20px;
 }
 
-.id{
+.id {
     width: 1% !important;
 }
-.shortUrl{
+
+.shortUrl {
     width: 45% !important;
 }
-.originalUrl{
+
+.originalUrl {
     width: 50% !important;
     max-width: 50% !important;
+}
+
+@media screen and (max-width: 500px) {
+    .container_data {
+        width: 98%;
+        margin: 5px;
+    }
+
+    .container_table {
+        scrollbar-width: thin;
+    }
 }

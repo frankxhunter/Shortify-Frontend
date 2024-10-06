@@ -1,10 +1,11 @@
-.container{
+.container {
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
 }
-.avatar{
+
+.avatar {
     background-color: rgb(26, 177, 87);
     font-size: 22px;
     padding: 5px;
@@ -19,11 +20,13 @@
     border-radius: 50%;
     box-shadow: 0px 3px 3px 1px black;
 }
-.username{
+
+.username {
     font-size: 20px;
     color: white;
 }
-.button{
+
+.button {
     background-color: var(--background-color-secondary);
     width: 90px;
     border: none;
@@ -31,13 +34,23 @@
     border-radius: 5px;
     padding: 5px 10px;
 }
-.button:hover{
+
+.button:hover {
     filter: brightness(.7);
 }
-.button:active{
+
+.button:active {
     filter: brightness(1);
 }
-.logginButton{
+
+.logginButton {
     background-color: var(--element-color);
     color: var(--background-color);
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        flex-direction: column;
+        margin-top: 10px;
+    }
 }

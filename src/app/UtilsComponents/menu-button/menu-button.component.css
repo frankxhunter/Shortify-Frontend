@@ -1,0 +1,168 @@
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 50px;
+    height: 50px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.line {
+    width: 85px;
+    height: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    transition: .7s;
+}
+
+.line2 {
+    opacity: 1;
+}
+
+
+
+.line1Move {
+    animation: moveLine1 .7s cubic-bezier(0.3, 1, 0.7, 1);
+    transform: translateY(22px) rotate(135deg);
+    z-index: 10;
+
+}
+
+.line1MoveBack {
+    animation: moveLine1Back .7s ease-in-out;
+    transform: translateY(0);
+
+}
+
+@keyframes moveLine1 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(22px) rotate(0);
+
+    }
+
+    100% {
+        transform: translateY(22px) rotate(135deg);
+
+    }
+}
+
+@keyframes moveLine1Back {
+    0% {
+        transform: translateY(22px) rotate(135deg);
+
+    }
+
+    50% {
+        transform: translateY(22px) rotate(0);
+
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+.line2Move {
+    width: 50px;
+    opacity: 0;
+    animation: moveLine2 .7s cubic-bezier(0.3, 1, 0.7, 1);
+}
+
+.line2MoveBack {
+    opacity: 1;
+    animation: moveLine2Back .7s ease-in-out;
+}
+
+@keyframes moveLine2 {
+    0% {
+        width: 85px;
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+
+    }
+
+    100% {
+        width: 50px;
+        opacity: 0;
+    }
+}
+
+@keyframes moveLine2Back {
+    0% {
+        width: 50px;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+
+    }
+
+    100% {
+        width: 85px;
+        opacity: 1;
+    }
+
+}
+
+
+.line3Move {
+    animation: moveLine3 .7s cubic-bezier(0.3, 1, 0.7, 1);
+    transform: translateY(-22px) rotate(45deg);
+    z-index: 10;
+}
+
+.line3MoveBack {
+    animation: moveLine3Back .7s ease-in-out;
+    transform: translateY(0) rotate(0);
+}
+
+@keyframes moveLine3 {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-22px) rotate(0);
+    }
+
+    100% {
+        transform: translateY(-22px) rotate(45deg);
+    }
+}
+
+@keyframes moveLine3Back {
+    0% {
+        transform: translateY(-22px) rotate(45deg);
+    }
+
+    50% {
+        transform: translateY(-22px) rotate(0);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+}

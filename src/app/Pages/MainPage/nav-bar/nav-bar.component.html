@@ -1,6 +1,6 @@
 <div class="container_nav-bar">
     <div class="title">Shortify</div>
-    <div class="container_links">
+    <div class="container_links" [ngClass]="{'visible': activateMenu}">
         <ul class="sections">
             <li><a routerLink="/">Home</a></li>
             <li><a routerLink="/links">My links</a></li>
@@ -8,7 +8,14 @@
             <!-- <li><a routerLink="/contact">Contact</a></li> -->
         </ul>
         <div class="login">
+            <div class="container_menu">
+                <app-menu-button [action]="changeActivateMenu" [activate]="activateMenu" />
+            </div>
             <app-loggin-button></app-loggin-button>
         </div>
+
+    </div>
+    <div class="container_menu">
+        <app-menu-button [action]="changeActivateMenu" [activate]="activateMenu" />
     </div>
 </div>

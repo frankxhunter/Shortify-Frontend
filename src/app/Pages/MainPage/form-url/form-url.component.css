@@ -83,3 +83,13 @@
     justify-content: center;
 
 }
+
+
+@media screen and (max-width: 500px) {
+
+    .form-section{
+        max-width: 90%;
+        margin: auto;
+    }
+    
+}
