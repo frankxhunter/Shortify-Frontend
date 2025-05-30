@@ -38,12 +38,11 @@
 .url{
     background-color: white;
     color: black;
-    display: grid;
-    grid-template-columns: 1fr 6fr;
-    align-items: center;
+    display: flex;
+    align-items: start;
     width: 100%;
     overflow: hidden;
-    gap: 4px;
+    gap: 9px;
     position: relative;
 
 }

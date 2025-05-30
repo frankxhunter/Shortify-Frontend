@@ -47,7 +47,7 @@ export class LogInComponent {
     this.userRegisterService.fetchLogIn(this.userForm.value).subscribe((data: any)=>{
       this.loading = false;
       console.log(data);
-      this.userRegisterService.setUserName(data.username)
+      this.userRegisterService.setUserName(this.userForm?.value?.email)
       this.userRegisterService.changeLogInState(false);
     }, error=>{
       this.loading = false;

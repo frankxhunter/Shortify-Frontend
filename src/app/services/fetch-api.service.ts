@@ -25,7 +25,7 @@ export class FetchApiService {
 
   public generateShortURL(originalUrl: string) {
     const params = new HttpParams().set('url', originalUrl);
-    const result = this.httpClient.post<ShortUrl>(API_URLS.createURL, params, {
+    const result = this.httpClient.post<Url>(API_URLS.createURL, params, {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       withCredentials: true,
     });
@@ -48,11 +48,8 @@ export class FetchApiService {
   }
 
   public getRegisterOfUrl(idUrl: string) {
-    console.log(idUrl);
-    const params = new HttpParams().set('id', idUrl);
-
-    return this.httpClient.get<Register[]>(API_URLS.getRegisters, {
-      params: params,
+    const url = API_URLS.getRegisters.replace("{id}", idUrl)
+    return this.httpClient.get<Register[]>(url, {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       withCredentials: true,
     });

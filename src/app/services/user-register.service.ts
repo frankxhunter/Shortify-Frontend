@@ -3,7 +3,6 @@ import { BehaviorSubject } from 'rxjs';
 import { API_URLS } from '../api-urls';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from '../interfaces/User.interface';
-import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -22,9 +21,10 @@ export class UserRegisterService {
   plataformBrower = inject(PLATFORM_ID);
 
   checkUsername() {
-    this.fetchCheckUser().subscribe((user) => {
-      if (user?.username) {
-        this.setUserName(user.username);
+    this.fetchCheckUser().subscribe((email) => {
+      if (email) {
+        this.setUserName(email);
+        this.changeSignUpState(false);
       }
     });
   }
@@ -47,33 +47,29 @@ export class UserRegisterService {
   }
 
   fetchLogIn(dataUser: any) {
-    let params = new HttpParams();
-    params = params.set('email', dataUser.email);
-    params = params.set('password', dataUser.password);
-
-    return this.httpClient.post(API_URLS.logInURL, params, {
-      headers: { 'content-type': 'application/x-www-form-urlencoded' },
-      withCredentials: true,
-      responseType: 'json',
-    });
+    return this.httpClient.post(API_URLS.logInURL, {
+      email: dataUser.email,
+      password: dataUser.password
+    },{
+        withCredentials: true,
+        responseType: 'text'
+    }
+    );
   }
   fetchSignUp(dataUser: any) {
-    let params = new HttpParams();
-    params = params.set('username', dataUser.username);
-    params = params.set('email', dataUser.email);
-    params = params.set('password', dataUser.password);
-
-    return this.httpClient.post(API_URLS.signUpURL, params, {
-      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    return this.httpClient.post<User>(API_URLS.signUpURL, {
+      email: dataUser.email,
+      password: dataUser.password
+    }, {
       withCredentials: true,
       responseType: 'json',
     });
   }
 
   private fetchCheckUser() {
-    return this.httpClient.get<User>(API_URLS.logInURL, {
+    return this.httpClient.get(API_URLS.logInURL, {
       withCredentials: true,
-      responseType: 'json',
+      responseType: 'text' as const,
     });
   }
 }

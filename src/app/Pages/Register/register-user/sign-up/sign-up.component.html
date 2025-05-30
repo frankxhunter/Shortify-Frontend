@@ -1,18 +1,5 @@
-<form action="" class="form" [formGroup]="userForm" id="userForm" (ngSubmit)="sendData()">
-    <div class="input_container">
-        <label for="username">Username<sup>*</sup>: </label>
-        <input formControlName="username" [ngClass]="{'error_input': hasAnyError('username')}" class="input"
-            type="text" id="username" placeholder="Enter your username" name="username">
-        <div class="error_message" *ngIf="hasError('username', 'required')">
-            The username is required
-        </div>
-        <div class="error_message" *ngIf="hasError('username', 'pattern')">
-            Enter a valid username
-        </div>
-    </div>
-    
-    <div class="input_container">
-        
+<form action="" class="form" [formGroup]="userForm" id="userForm" (ngSubmit)="sendData()">    
+    <div class="input_container">       
         <label for="email">Email<sup>*</sup>: </label>
         <input formControlName="email" [ngClass]="{'error_input': hasAnyError('email')}" class="input"
             type="text" id="email" name="email" placeholder="Enter your email">
@@ -27,7 +14,7 @@
         <label for="password">Password<sup>*</sup>: </label>
         <div class="input password_input" [ngClass]="{'error_input': hasAnyError('password')}">
             <input class="password" formControlName="password" [type]="passwordVisibility? 'text': 'password'"
-                id="password" name="password" placeholder="Enter your password">
+                id="password" name="password" placeholder="Enter your password" autocomplete="current-password">
             <div class="visibility" (click)="changePasswordVisibility()">
                 @if (!passwordVisibility) {
                 <span class="material-symbols-outlined">

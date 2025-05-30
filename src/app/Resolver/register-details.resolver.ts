@@ -7,6 +7,6 @@ export const registerDetailsResolver: ResolveFn<Register[] | null> = (route) => 
   const id = route.paramMap.get("id")
   if(id)
   return inject(FetchApiService).getRegisterOfUrl(id);
-  else 
+  else
   return null;
 };

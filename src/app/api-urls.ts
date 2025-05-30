@@ -1,8 +1,12 @@
+import { environment } from "../environments/environment";
+
+const baseURL = environment.baseUrlBack;
+
 export const API_URLS = {
-  baseURL: 'http://localhost:8080/shortify',
-  createURL: 'http://localhost:8080/shortify/create',
-  logInURL: "http://localhost:8080/shortify/users/login",
-  signUpURL: "http://localhost:8080/shortify/users/signup",
-  getUrls: "http://localhost:8080/shortify/urls",
-  getRegisters: "http://localhost:8080/shortify/urls/request",
+  baseURL: baseURL,
+  createURL: `${baseURL}/urls/create`,
+  logInURL: `${baseURL}/login`,
+  signUpURL: `${baseURL}/register`,
+  getUrls: `${baseURL}/urls`,
+  getRegisters: `${baseURL}/urls/{id}/requests`,
 };

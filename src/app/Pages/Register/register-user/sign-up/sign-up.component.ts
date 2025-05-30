@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { UserRegisterService } from '../../../../services/user-register.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { User } from '../../../../interfaces/User.interface';
 @Component({
   selector: 'app-sign-up',
   standalone: true,
@@ -29,10 +30,6 @@ export class SignUpComponent {
 
   constructor(_form: FormBuilder) {
     this.userForm = _form.group({
-      username: [
-        '',
-        [Validators.required, Validators.pattern(/^\w[\w.]{0,28}\w$/)],
-      ],
       email: [
         '',
         [
@@ -70,16 +67,16 @@ export class SignUpComponent {
     this.error = null;
     this.loading = true;
     this.userRegisterService.fetchSignUp(this.userForm.value).subscribe(
-      (data: any) => {
+      (data: User) => {
         this.loading = false;
         console.log(data);
-        this.userRegisterService.setUserName(data.username);
+        this.userRegisterService.setUserName(data.email);
         this.userRegisterService.changeSignUpState(false);
       },
       (error) => {
         this.loading = false;
         console.log(error);
-        this.error = error.error.error;
+        this.error = error.error;
       }
     );
   }
