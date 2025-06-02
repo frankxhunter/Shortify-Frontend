@@ -1,4 +1,5 @@
 export const environment = {
     production: false,
-    baseUrlBack: "http://localhost:8080"
+    baseUrlBack: "https://shortify-backend-cuub.onrender.com"
+
 }

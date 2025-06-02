@@ -80,5 +80,12 @@ footer img{
     .title{
         max-width: 90%;
     }
+
+     footer{
+        margin: auto;
+        max-width: 80%;
+        font-size: 38px;
+        line-height: 40px;
+    }
     
 }

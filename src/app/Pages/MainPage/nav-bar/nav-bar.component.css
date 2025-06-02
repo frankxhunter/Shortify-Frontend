@@ -50,6 +50,9 @@ a:hover {
 }
 
 @media screen and (max-width: 500px) {
+    .title {
+    font-size: 30px;
+    }
     .container_nav-bar {
         justify-content: space-between;
     }
