@@ -19,7 +19,12 @@ export class LogginButtonComponent {
   ngOnInit(): void {
     this.subcription = this.userRegisterService.usernameState$.subscribe(
       (usernameNew) => {
-        this.username = usernameNew;
+        if(usernameNew && usernameNew.includes('@')){
+          this.username = usernameNew.split('@')[0];
+        }else{
+          this.username = usernameNew;
+
+        }
       }
     );
   }
