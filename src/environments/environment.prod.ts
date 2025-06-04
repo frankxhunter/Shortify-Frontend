@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    baseUrlBack: "https://shortfy.link/"
+    baseUrlBack: "https://shortfy.link"
 }
