@@ -2,7 +2,7 @@
     @if(!editMode){
     <div class="dataContainer">{{data}}</div>
     <button (click)="changeEditMode(true)">
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined" translate="no">
             edit
         </span>
     </button>
@@ -12,13 +12,13 @@
         <input class="input" type="text" formControlName="dataForm">
         
         <button type="submit">
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined" translate="no">
                 check
             </span>
         </button>
     </form>
     <button (click)="changeEditMode(false)">
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined" translate="no">
             close
         </span>
     </button>

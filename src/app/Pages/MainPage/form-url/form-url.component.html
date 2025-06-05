@@ -9,12 +9,12 @@
         }
         @if(errorInput){
         <small class="error required_error" [ngClass]="{'error_show': hasErrors('url', 'required')}">
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined" translate="no">
                 warning
             </span>
             La URL es obligatoria</small>
         <small class="error formate_error" [ngClass]="{'error_show': hasErrors('url', 'pattern')}">
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined" translate="no">
                 warning
             </span>
             El formato de la URL es incorrecto</small>

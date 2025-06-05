@@ -22,5 +22,12 @@ h3, p{
     display: flex;
     align-items: center;
 }
+font {
+    /* color: var(--background-color); */
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
