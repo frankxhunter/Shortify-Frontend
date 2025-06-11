@@ -1,27 +1,93 @@
-# Shortify
+# Shortify Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+Este es el frontend de **Shortify**, una aplicación para acortar URLs, ver historial de accesos y gestionar tus enlaces fácilmente.  
+Construido con **Angular** y pensado para una experiencia rápida, intuitiva y moderna.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ✨ Características principales
 
-## Code scaffolding
+- 🔗 Acorta URLs largas en enlaces cortos en un solo click
+- 📊 Visualiza el historial de accesos de cada enlace corto
+- 🛠️ Gestiona (crear, editar) tus enlaces desde una interfaz amigable
+- 🔒 Registro e inicio de sesión de usuarios
+- 🖥️ Integración directa con el backend Java/Spring ([Shortify-BackEnd](https://github.com/frankxhunter/Shortify-BackEnd))
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🚀 Tecnologías utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular**
+- **TypeScript**
+- **RxJS**
+- **Bootstrap** (o tu framework de estilos preferido)
+- **Consumo de API REST**
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## ⚙️ Cómo ejecutar el frontend localmente
 
-## Running end-to-end tests
+1. Clona este repositorio:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   git clone https://github.com/frankxhunter/Shortify-Frontend.git
+   ```
 
-## Further help
+2. Ingresa al directorio del proyecto:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   ```bash
+   cd Shortify-Frontend
+   ```
+
+3. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+4. Levanta el servidor de desarrollo:
+
+   ```bash
+   ng serve
+   ```
+
+5. Accede a la app en:
+
+   ```bash
+   http://localhost:4200
+   ```
+
+---
+
+## 🧑‍💻 Funcionalidades y flujos principales
+
+- **Acortar URL:** Ingresa una URL larga y obtén un enlace corto.
+- **Historial:** Visualiza todas tus URLs y el historial de accesos de cada una.
+- **Editar URL:** Actualiza la URL original desde el panel de usuario.
+- **Registro/Inicio de sesión:** Regístrate o inicia sesión para gestionar tus enlaces.
+
+---
+
+## 📚 Scripts útiles
+
+- `ng serve` — Levanta el servidor de desarrollo
+- `ng build` — Genera una build de producción en `dist/`
+- `ng test` — Ejecuta pruebas unitarias con Karma
+- `ng e2e` — Ejecuta tests end-to-end
+
+---
+
+## 📦 Backend relacionado
+
+¿Buscas el backend?
+[Shortify-BackEnd](https://github.com/frankxhunter/Shortify-BackEnd)
+
+---
+
+## 📄 Licencia
+
+Este proyecto se distribuye bajo licencia abierta.
+
+---
+
+Desarrollado con ❤️ por [frankxhunter](https://github.com/frankxhunter)
