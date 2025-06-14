@@ -58,7 +58,11 @@ export class EditableButtonComponent {
         this.load = false;
         this.changeEditMode(false);
         console.log(data);
-      })
+      },(error)=>{
+        this.load = false;
+        console.error(error)
+
+      });
     }
   }
 
