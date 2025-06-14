@@ -39,9 +39,9 @@ export class FetchApiService {
   }
 
   public updateOriginalUrl(id: number, originalUrl: string) {
-    let params = new HttpParams().set('id', id).set('originalUrl', originalUrl);
+    let params = new HttpParams().set('originalUrl', originalUrl);
 
-    return this.httpClient.post(API_URLS.getUrls, params, {
+    return this.httpClient.put(API_URLS.getUrls+"/"+id, params, {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       withCredentials: true,
     });
