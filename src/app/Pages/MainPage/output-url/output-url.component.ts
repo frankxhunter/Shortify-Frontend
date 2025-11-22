@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-output-url',
-  standalone: true,
-  imports: [],
-  templateUrl: './output-url.component.html',
-  styleUrl: './output-url.component.css'
+    selector: 'app-output-url',
+    imports: [],
+    templateUrl: './output-url.component.html',
+    styleUrl: './output-url.component.css'
 })
 export class OutputUrlComponent {
   @Input() shortUrl !: string

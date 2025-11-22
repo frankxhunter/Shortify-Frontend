@@ -10,11 +10,10 @@ import { UserRegisterService } from '../../../../services/user-register.service'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { User } from '../../../../interfaces/User.interface';
 @Component({
-  selector: 'app-sign-up',
-  standalone: true,
-  imports: [NgIf, ReactiveFormsModule, NgClass, MatProgressSpinnerModule],
-  templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.css',
+    selector: 'app-sign-up',
+    imports: [NgIf, ReactiveFormsModule, NgClass, MatProgressSpinnerModule],
+    templateUrl: './sign-up.component.html',
+    styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
   passwordVisibility = false;

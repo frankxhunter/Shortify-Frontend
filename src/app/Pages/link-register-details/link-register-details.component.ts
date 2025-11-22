@@ -11,19 +11,18 @@ import { CopyButtonComponent } from '../../UtilsComponents/copy-button/copy-butt
 import { EditableButtonComponent } from '../../UtilsComponents/editable-button/editable-button.component';
 
 @Component({
-  selector: 'app-link-register-details',
-  standalone: true,
-  imports: [
-    RouterLink,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTableModule,
-    NgClass,
-    CopyButtonComponent,
-    EditableButtonComponent,
-  ],
-  templateUrl: './link-register-details.component.html',
-  styleUrl: './link-register-details.component.css',
+    selector: 'app-link-register-details',
+    imports: [
+        RouterLink,
+        MatFormFieldModule,
+        MatInputModule,
+        MatTableModule,
+        NgClass,
+        CopyButtonComponent,
+        EditableButtonComponent,
+    ],
+    templateUrl: './link-register-details.component.html',
+    styleUrl: './link-register-details.component.css'
 })
 export class LinkRegisterDetailsComponent {
   @Input() registers!: Register[];

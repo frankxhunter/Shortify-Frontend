@@ -6,11 +6,10 @@ import { LogInComponent } from "./log-in/log-in.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 
 @Component({
-  selector: 'app-register-user',
-  standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgClass, LogInComponent, SignUpComponent],
-  templateUrl: './register-user.component.html',
-  styleUrl: './register-user.component.css'
+    selector: 'app-register-user',
+    imports: [ReactiveFormsModule, NgIf, NgClass, LogInComponent, SignUpComponent],
+    templateUrl: './register-user.component.html',
+    styleUrl: './register-user.component.css'
 })
 export class RegisterUserComponent {
 

@@ -4,11 +4,10 @@ import { Subscription } from 'rxjs';
 import { UserRegisterService } from '../../../../services/user-register.service';
 
 @Component({
-  selector: 'app-loggin-button',
-  standalone: true,
-  imports: [UpperCasePipe, TitleCasePipe],
-  templateUrl: './loggin-button.component.html',
-  styleUrl: './loggin-button.component.css',
+    selector: 'app-loggin-button',
+    imports: [UpperCasePipe, TitleCasePipe],
+    templateUrl: './loggin-button.component.html',
+    styleUrl: './loggin-button.component.css'
 })
 export class LogginButtonComponent {
   private userRegisterService = inject(UserRegisterService);

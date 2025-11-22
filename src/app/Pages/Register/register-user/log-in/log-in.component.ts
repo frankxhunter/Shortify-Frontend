@@ -5,11 +5,10 @@ import { UserRegisterService } from '../../../../services/user-register.service'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
-  selector: 'app-log-in',
-  standalone: true,
-  imports: [NgIf, ReactiveFormsModule, NgClass, MatProgressSpinnerModule],
-  templateUrl: './log-in.component.html',
-  styleUrl: './log-in.component.css'
+    selector: 'app-log-in',
+    imports: [NgIf, ReactiveFormsModule, NgClass, MatProgressSpinnerModule],
+    templateUrl: './log-in.component.html',
+    styleUrl: './log-in.component.css'
 })
 export class LogInComponent {
 

@@ -5,12 +5,11 @@ import { RequireAutheticationErrorComponent } from '../../require-authetication-
 
 
 @Component({
-  selector: 'app-links',
-  standalone: true,
-  imports: [TableLinksComponent, RequireAutheticationErrorComponent],
-  templateUrl: './links.component.html',
-  styleUrl: './links.component.css',
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-links',
+    imports: [TableLinksComponent, RequireAutheticationErrorComponent],
+    templateUrl: './links.component.html',
+    styleUrl: './links.component.css',
+    encapsulation: ViewEncapsulation.None
 })
 export class LinksComponent {
 registerUserService = inject(UserRegisterService)

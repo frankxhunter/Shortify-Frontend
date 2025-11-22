@@ -9,19 +9,18 @@ import { RegisterUserComponent } from './Pages/Register/register-user/register-u
 import { MenuButtonComponent } from "./UtilsComponents/menu-button/menu-button.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    FormUrlComponent,
-    OutputUrlComponent,
-    ErrorComponent,
-    NavBarComponent,
-    RegisterUserComponent,
-    MenuButtonComponent
-],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    selector: 'app-root',
+    imports: [
+        RouterOutlet,
+        FormUrlComponent,
+        OutputUrlComponent,
+        ErrorComponent,
+        NavBarComponent,
+        RegisterUserComponent,
+        MenuButtonComponent
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   userRegisterService = inject(UserRegisterService);

@@ -5,11 +5,10 @@ import { MenuButtonComponent } from "../../../UtilsComponents/menu-button/menu-b
 import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-nav-bar',
-  standalone: true,
-  imports: [LogginButtonComponent, RouterLink, MenuButtonComponent, NgClass],
-  templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.css'
+    selector: 'app-nav-bar',
+    imports: [LogginButtonComponent, RouterLink, MenuButtonComponent, NgClass],
+    templateUrl: './nav-bar.component.html',
+    styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
 

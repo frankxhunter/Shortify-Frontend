@@ -11,11 +11,10 @@ import { EditableButtonComponent } from "../../../UtilsComponents/editable-butto
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-table-links',
-  standalone: true,
-  imports: [RouterLink, MatFormFieldModule, MatInputModule, MatTableModule, NgClass, CopyButtonComponent, EditableButtonComponent],
-  templateUrl: './table-links.component.html',
-  styleUrl: './table-links.component.css'
+    selector: 'app-table-links',
+    imports: [RouterLink, MatFormFieldModule, MatInputModule, MatTableModule, NgClass, CopyButtonComponent, EditableButtonComponent],
+    templateUrl: './table-links.component.html',
+    styleUrl: './table-links.component.css'
 })
 export class TableLinksComponent {
   displayedColumns: string[] = ['id', 'Short_Url', 'Original_Url'];

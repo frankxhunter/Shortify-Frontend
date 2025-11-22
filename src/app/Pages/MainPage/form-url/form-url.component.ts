@@ -15,11 +15,10 @@ import { url } from 'inspector';
 import { error } from 'console';
 
 @Component({
-  selector: 'app-form-url',
-  standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgClass, NgStyle, MatProgressSpinnerModule],
-  templateUrl: './form-url.component.html',
-  styleUrl: './form-url.component.css',
+    selector: 'app-form-url',
+    imports: [FormsModule, ReactiveFormsModule, NgClass, NgStyle, MatProgressSpinnerModule],
+    templateUrl: './form-url.component.html',
+    styleUrl: './form-url.component.css'
 })
 export class FormUrlComponent {
   fetchApiService = inject(FetchApiService);

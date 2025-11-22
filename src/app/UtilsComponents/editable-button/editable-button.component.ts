@@ -10,11 +10,10 @@ import { FetchApiService } from '../../services/fetch-api.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
-  selector: 'app-editable-button',
-  standalone: true,
-  imports: [ReactiveFormsModule, MatProgressSpinnerModule],
-  templateUrl: './editable-button.component.html',
-  styleUrl: './editable-button.component.css',
+    selector: 'app-editable-button',
+    imports: [ReactiveFormsModule, MatProgressSpinnerModule],
+    templateUrl: './editable-button.component.html',
+    styleUrl: './editable-button.component.css'
 })
 export class EditableButtonComponent {
   @Input() data = '';

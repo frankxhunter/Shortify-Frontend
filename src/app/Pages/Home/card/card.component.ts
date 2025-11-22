@@ -3,11 +3,10 @@ import { Router, RouterLink } from '@angular/router';
 import { UserRegisterService } from '../../../services/user-register.service';
 
 @Component({
-  selector: 'app-card',
-  standalone: true,
-  imports: [RouterLink],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.css',
+    selector: 'app-card',
+    imports: [RouterLink],
+    templateUrl: './card.component.html',
+    styleUrl: './card.component.css'
 })
 export class CardComponent {
   @Input() image!: string;
