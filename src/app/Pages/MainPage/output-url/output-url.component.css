@@ -29,7 +29,7 @@
 
 .container_text{
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 8fr 3fr 1fr;
     gap: 10px;
 }
 .container_label{
@@ -49,7 +49,7 @@
 .url span{
     color: black;
 }
-.btn_copy{
+.btn{
     min-width: 85px;
     background: var(--element-color);
     color: var(--background-color);
@@ -62,15 +62,15 @@
 
 
 }
-.btn_copy span{
+.btn span{
     color: var(--background-color) !important;
 
 }
-.btn_copy:hover{
+.btn:hover{
     filter: brightness(0.7);
 }
 
-.url, .btn_copy{
+.url, .btn{
     padding: 4px 12px;
     border-radius: 10px;
 }

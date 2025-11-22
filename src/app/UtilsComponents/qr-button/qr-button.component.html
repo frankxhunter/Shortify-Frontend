@@ -1,0 +1,11 @@
+<div class="container">
+    <button class="btn" (click)="openQrComponent()">
+        <span class="material-symbols-outlined">
+            qr_code_scanner
+        </span>
+    </button>
+
+    @if(showQrComponent){
+    <app-qr-overlay [data]="data" (close)=closeQrComponent()></app-qr-overlay>
+    }
+</div>

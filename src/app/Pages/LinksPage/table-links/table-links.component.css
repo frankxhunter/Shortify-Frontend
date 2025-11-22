@@ -64,6 +64,19 @@ td {
     background-color: rgba(65, 47, 47, 0.876) !important;
 }
 
+.btn {
+    background: none;
+    color: var(--background-color);
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 
 .container {
     display: flex;

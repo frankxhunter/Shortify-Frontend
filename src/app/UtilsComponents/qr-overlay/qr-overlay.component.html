@@ -1,0 +1,22 @@
+    <div class="overlay">
+
+        <!-- Close button -->
+        <button class="close-btn" (click)="close.emit()">
+            ✕
+        </button>
+
+        <div class="content">
+            <!-- QR Code -->
+            <h2 class="title">Download your QR 😊</h2>
+
+            <div class="qrcode">
+                <qrcode #qr [qrdata]="data" [width]="250" [errorCorrectionLevel]="'M'"></qrcode>
+            </div>
+
+            <!-- Buttons -->
+            <div class="actions">
+                <button class="action-btn" (click)="downloadQR()">Download QR</button>
+                <button class="action-btn" (click)="close.emit()">Close</button>
+            </div>
+        </div>
+    </div>

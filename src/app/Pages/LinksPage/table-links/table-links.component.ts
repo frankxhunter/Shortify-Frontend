@@ -9,10 +9,11 @@ import { NgClass } from '@angular/common';
 import { CopyButtonComponent } from "../../../UtilsComponents/copy-button/copy-button.component";
 import { EditableButtonComponent } from "../../../UtilsComponents/editable-button/editable-button.component";
 import { RouterLink } from '@angular/router';
+import { QrButtonComponent } from "../../../UtilsComponents/qr-button/qr-button.component";
 
 @Component({
     selector: 'app-table-links',
-    imports: [RouterLink, MatFormFieldModule, MatInputModule, MatTableModule, NgClass, CopyButtonComponent, EditableButtonComponent],
+    imports: [RouterLink, MatFormFieldModule, MatInputModule, MatTableModule, NgClass, CopyButtonComponent, EditableButtonComponent, QrButtonComponent],
     templateUrl: './table-links.component.html',
     styleUrl: './table-links.component.css'
 })
@@ -23,6 +24,8 @@ export class TableLinksComponent {
   baseUrl = API_URLS.baseURL
   inputActived = false;
   textCopied= false;
+  showQrComponent=false;
+
 
 
   constructor() {
@@ -53,6 +56,14 @@ export class TableLinksComponent {
     }
     console.log(filterValue);
     console.log(this.inputActived);
+  }
+
+  closeQrComponent(){
+    this.showQrComponent=false;
+  }
+
+  openQrComponent(){
+    this.showQrComponent=true;
   }
   
 

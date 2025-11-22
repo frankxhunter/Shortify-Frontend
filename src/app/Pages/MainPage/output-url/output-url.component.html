@@ -8,14 +8,25 @@
             </span>
             {{shortUrl}}
         </div>
-        <button class="btn_copy" (click)="copyText()">
+        <button class="btn" (click)="copyText()">
             <span class="material-symbols-outlined" translate="no">
                 content_copy
             </span>
             Copy
         </button>
         @if (copySuccess) {
-            <span class="text_copied">Copied!</span>
+        <span class="text_copied">Copied!</span>
+        }
+        <button class="btn" (click)="openQrComponent()">
+            <span class="material-symbols-outlined">
+                qr_code_scanner
+            </span>
+            QR
+        </button>
+
+        @if(showQrComponent){
+        <app-qr-overlay [data]="shortUrl"
+            (close)=closeQrComponent()></app-qr-overlay>
         }
     </div>
 </div>

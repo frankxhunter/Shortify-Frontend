@@ -7,6 +7,7 @@ import { NavBarComponent } from './Pages/MainPage/nav-bar/nav-bar.component';
 import { UserRegisterService } from './services/user-register.service';
 import { RegisterUserComponent } from './Pages/Register/register-user/register-user.component';
 import { MenuButtonComponent } from "./UtilsComponents/menu-button/menu-button.component";
+import { QrOverlayComponent } from './UtilsComponents/qr-overlay/qr-overlay.component';
 
 @Component({
     selector: 'app-root',
@@ -17,7 +18,6 @@ import { MenuButtonComponent } from "./UtilsComponents/menu-button/menu-button.c
         ErrorComponent,
         NavBarComponent,
         RegisterUserComponent,
-        MenuButtonComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
@@ -28,9 +28,8 @@ export class AppComponent {
   title = 'Shortify';
   fetchData = '';
   errorConnection = false;
-
   isRegisterUserActived = false;
-
+  
   ngOnInit(): void {
     this.userRegisterService.logInState$.subscribe(() => {
       this.checkRegisterUserActiver();
