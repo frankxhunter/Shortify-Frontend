@@ -66,6 +66,15 @@ export class UserRegisterService {
     });
   }
 
+  fetchGoogleAuth(token: string){
+    return this.httpClient.post(API_URLS.googleAuth, {
+      token
+    }, {
+            withCredentials: true,
+            responseType: 'json',
+    })
+  }
+
   private fetchCheckUser() {
     return this.httpClient.get(API_URLS.logInURL, {
       withCredentials: true,

@@ -1,25 +1,17 @@
 import { NgClass } from '@angular/common';
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { RouterLink } from '@angular/router';
-import { Url } from 'url';
 import { Register } from '../../interfaces/register.interface';
-import { FetchApiService } from '../../services/fetch-api.service';
-import { CopyButtonComponent } from '../../UtilsComponents/copy-button/copy-button.component';
-import { EditableButtonComponent } from '../../UtilsComponents/editable-button/editable-button.component';
 
 @Component({
     selector: 'app-link-register-details',
     imports: [
-        RouterLink,
         MatFormFieldModule,
         MatInputModule,
         MatTableModule,
         NgClass,
-        CopyButtonComponent,
-        EditableButtonComponent,
     ],
     templateUrl: './link-register-details.component.html',
     styleUrl: './link-register-details.component.css'

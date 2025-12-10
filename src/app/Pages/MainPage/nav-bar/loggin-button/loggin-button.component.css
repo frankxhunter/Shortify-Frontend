@@ -28,11 +28,12 @@
 
 .button {
     background-color: var(--background-color-secondary);
-    width: 90px;
+    min-width: 90px;
     border: none;
     font-size: 20px;
     border-radius: 5px;
     padding: 5px 10px;
+    white-space: nowrap;
 }
 
 .button:hover {

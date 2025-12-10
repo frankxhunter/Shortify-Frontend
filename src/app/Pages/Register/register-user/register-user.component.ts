@@ -1,13 +1,12 @@
-import { NgIf,NgClass} from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { UserRegisterService } from '../../../services/user-register.service';
-import { LogInComponent } from "./log-in/log-in.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
+import { LogInComponent } from "./log-in/log-in.component";
 
 @Component({
     selector: 'app-register-user',
-    imports: [ReactiveFormsModule, NgIf, NgClass, LogInComponent, SignUpComponent],
+    imports: [ReactiveFormsModule, SignUpComponent, LogInComponent],
     templateUrl: './register-user.component.html',
     styleUrl: './register-user.component.css'
 })

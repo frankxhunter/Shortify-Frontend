@@ -11,7 +11,8 @@ import { QrOverlayComponent } from './UtilsComponents/qr-overlay/qr-overlay.comp
 
 @Component({
     selector: 'app-root',
-    imports: [
+  standalone: true,
+  imports: [
         RouterOutlet,
         FormUrlComponent,
         OutputUrlComponent,
@@ -20,7 +21,7 @@ import { QrOverlayComponent } from './UtilsComponents/qr-overlay/qr-overlay.comp
         RegisterUserComponent,
     ],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   userRegisterService = inject(UserRegisterService);

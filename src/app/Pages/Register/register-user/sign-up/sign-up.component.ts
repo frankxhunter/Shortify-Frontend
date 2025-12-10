@@ -1,89 +1,33 @@
-import { NgClass, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
 import { UserRegisterService } from '../../../../services/user-register.service';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { User } from '../../../../interfaces/User.interface';
+import { RegisterComponent } from "../../../../UtilsComponents/register-component/register-component.component";
 @Component({
-    selector: 'app-sign-up',
-    imports: [NgIf, ReactiveFormsModule, NgClass, MatProgressSpinnerModule],
-    templateUrl: './sign-up.component.html',
-    styleUrl: './sign-up.component.css'
+  selector: 'app-sign-up',
+  imports: [RegisterComponent],
+  templateUrl: './sign-up.component.html',
+  styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
-  passwordVisibility = false;
 
-  isClickBtnSend = false;
   error: string | null = null;
-
-  loading = false;
+  isFinishFetch = false;
 
   userRegisterService = inject(UserRegisterService);
 
-  userForm: FormGroup;
-
-  constructor(_form: FormBuilder) {
-    this.userForm = _form.group({
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^[a-zA-Z\d-_]+@[a-zA-Z0-9.]+.[a-z]+$/),
-        ],
-      ],
-      password: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(
-            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)(?!.*\s).{8,16}$/
-          ),
-        ],
-      ],
-    });
-  }
-
-  hasError(controlName: string, typeError: string) {
-    return (
-      this.userForm.get(controlName)?.getError(typeError) &&
-      (this.userForm.get(controlName)?.touched || this.isClickBtnSend)
-    );
-  }
-  hasAnyError(controlName: string) {
-    return (
-      this.userForm.get(controlName)?.errors &&
-      (this.userForm.get(controlName)?.touched || this.isClickBtnSend)
-    );
-  }
-
-  sendData() {
-    this.isClickBtnSend = true;
-    this.error = null;
-    this.loading = true;
-    this.userRegisterService.fetchSignUp(this.userForm.value).subscribe(
-      (data: User) => {
-        this.loading = false;
-        console.log(data);
+  sendData(value: any) {
+    this.userRegisterService.fetchSignUp(value).subscribe({
+      next: (data: User) => {
+        this.isFinishFetch = true;
         this.userRegisterService.setUserName(data.email);
         this.userRegisterService.changeSignUpState(false);
       },
-      (error) => {
-        this.loading = false;
-        console.log(error);
+      error: (error) => {
+        this.isFinishFetch = true;
         this.error = error.error;
+        console.log("Error")
       }
+    }
     );
-  }
-
-  changePasswordVisibility() {
-    this.passwordVisibility = !this.passwordVisibility;
-  }
-  changeRegister() {
-    this.userRegisterService.changeLogInState(true);
   }
 }

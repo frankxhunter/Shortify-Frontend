@@ -1,0 +1,19 @@
+#googleBtn * {
+    color: inherit !important
+}
+
+#googleBtn {
+    color: black
+}
+
+#googleBtn, #googleBtn * {
+  color: black !important;
+    border-radius: 20px;
+
+}
+
+:host ::ng-deep #googleBtn * {
+  color: black;
+    border-radius: 20px;
+  
+}

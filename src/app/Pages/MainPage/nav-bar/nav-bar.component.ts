@@ -6,9 +6,10 @@ import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-nav-bar',
-    imports: [LogginButtonComponent, RouterLink, MenuButtonComponent, NgClass],
-    templateUrl: './nav-bar.component.html',
-    styleUrl: './nav-bar.component.css'
+     standalone: true,
+     imports: [LogginButtonComponent, RouterLink, MenuButtonComponent, NgClass],
+     templateUrl: './nav-bar.component.html',
+     styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
 

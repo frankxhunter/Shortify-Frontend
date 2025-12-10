@@ -3,9 +3,10 @@ import { QrOverlayComponent } from '../qr-overlay/qr-overlay.component';
 
 @Component({
   selector: 'app-qr-button',
+  standalone: true,
   imports: [QrOverlayComponent],
   templateUrl: './qr-button.component.html',
-  styleUrl: './qr-button.component.css'
+  styleUrls: ['./qr-button.component.css']
 })
 export class QrButtonComponent {
 

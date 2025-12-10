@@ -1,12 +1,12 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
-import { QRCodeModule } from 'angularx-qrcode';
-
+import { QRCodeComponent } from 'angularx-qrcode';
 @Component({
   selector: 'app-qr-overlay',
-  imports: [QRCodeModule],
+  standalone: true,
+  imports: [QRCodeComponent],
   templateUrl: './qr-overlay.component.html',
-  styleUrl: './qr-overlay.component.css'
+  styleUrls: ['./qr-overlay.component.css']
 })
 export class QrOverlayComponent {
   @Input() data: string = '';

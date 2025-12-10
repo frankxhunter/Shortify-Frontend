@@ -1,10 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserRegisterService } from '../../../services/user-register.service';
 
 @Component({
     selector: 'app-card',
-    imports: [RouterLink],
+    imports: [],
     templateUrl: './card.component.html',
     styleUrl: './card.component.css'
 })
@@ -22,7 +22,7 @@ export class CardComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.userService.usernameState$.subscribe((e) => {
-      this.isLogin = e == null || e == '';
+      this.isLogin = e != null && e != '';
     });
   }
 
@@ -32,7 +32,7 @@ export class CardComponent {
 
   action(){
     if(this.isLogin){
-      this.router.navigate([this.link])
+      this.router.navigateByUrl(this.link);
     }
     else{
       this.userService.changeLogInState(true);

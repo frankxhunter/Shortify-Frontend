@@ -11,9 +11,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
     selector: 'app-editable-button',
-    imports: [ReactiveFormsModule, MatProgressSpinnerModule],
-    templateUrl: './editable-button.component.html',
-    styleUrl: './editable-button.component.css'
+  standalone: true,
+  imports: [ReactiveFormsModule, MatProgressSpinnerModule],
+  templateUrl: './editable-button.component.html',
+  styleUrls: ['./editable-button.component.css']
 })
 export class EditableButtonComponent {
   @Input() data = '';

@@ -1,4 +1,4 @@
-import { NgClass, NgStyle } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
   FormBuilder,
@@ -11,14 +11,12 @@ import { API_URLS } from '../../../api-urls';
 import { FetchApiService } from '../../../services/fetch-api.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
-import { url } from 'inspector';
-import { error } from 'console';
-
 @Component({
     selector: 'app-form-url',
-    imports: [FormsModule, ReactiveFormsModule, NgClass, NgStyle, MatProgressSpinnerModule],
-    templateUrl: './form-url.component.html',
-    styleUrl: './form-url.component.css'
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, NgClass, MatProgressSpinnerModule],
+  templateUrl: './form-url.component.html',
+  styleUrls: ['./form-url.component.css']
 })
 export class FormUrlComponent {
   fetchApiService = inject(FetchApiService);
@@ -31,7 +29,6 @@ export class FormUrlComponent {
 
   errorInput = false;
 
-  // urlValue = 'https://chatgpt.com/c/c5371a23-6599-4c8a-b82d-649319c2c931';
   urlValue = '';
 
   @Output() fetchEvent = new EventEmitter<string>();

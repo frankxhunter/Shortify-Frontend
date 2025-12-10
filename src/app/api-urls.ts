@@ -7,6 +7,7 @@ export const API_URLS = {
   createURL: `${baseURL}/urls/create`,
   logInURL: `${baseURL}/login`,
   signUpURL: `${baseURL}/register`,
+  googleAuth: `${baseURL}/auth/google`,
   getUrls: `${baseURL}/urls`,
   getRegisters: `${baseURL}/urls/{id}/requests`,
 };

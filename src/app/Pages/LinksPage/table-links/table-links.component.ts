@@ -13,9 +13,10 @@ import { QrButtonComponent } from "../../../UtilsComponents/qr-button/qr-button.
 
 @Component({
     selector: 'app-table-links',
+    standalone: true,
     imports: [RouterLink, MatFormFieldModule, MatInputModule, MatTableModule, NgClass, CopyButtonComponent, EditableButtonComponent, QrButtonComponent],
     templateUrl: './table-links.component.html',
-    styleUrl: './table-links.component.css'
+    styleUrls: ['./table-links.component.css']
 })
 export class TableLinksComponent {
   displayedColumns: string[] = ['id', 'Short_Url', 'Original_Url'];

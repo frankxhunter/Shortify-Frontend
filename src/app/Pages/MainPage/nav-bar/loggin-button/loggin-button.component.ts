@@ -29,7 +29,7 @@ export class LogginButtonComponent {
   }
 
   ngAfterContentInit(): void {
-    if(window != null)
+    if(typeof window !== 'undefined')
     this.userRegisterService.checkUsername();
   }
 
